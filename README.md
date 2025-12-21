@@ -81,5 +81,5 @@ For questions, issues, or contributions, please open an issue on GitHub.
 
 ---
 
-*Developed as part of a robotics and human-robot interaction research project*
+*Developed as final project of Cognitive Robotics course of the University of Salerno*
 
