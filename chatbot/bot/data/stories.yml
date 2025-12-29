@@ -1,0 +1,1725 @@
+version: "3.1"
+
+stories:
+
+- story: 1 - Counting People by Attributes
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: count_people
+    entities:
+    - gender: male
+    - clothing: hat
+  - action: action_count_people
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: true
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 2 - Finding Someone by Detailed Attributes
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: finding_someone
+    entities:
+    - gender: male
+    - clothing: bag
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - requested_slot: null 
+  - slot_was_set:
+    - session_started_metadata: null
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - requested_slot: hat
+  - intent: doubt
+  - slot_was_set:
+    - hat: None
+  - action: find_person_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_find_person_form
+  - intent: inform
+    entities:
+    - gender: male
+    - negation: not
+    - clothing: hat
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: false
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - session_started_metadata: null
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_find_person_form
+  - intent: affirm
+  - action: action_submit
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 3 - Identifying a Person by Specific Features
+  steps:
+  - intent: finding_someone
+    entities:
+    - gender: female
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - session_started_metadata: null
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - requested_slot: bag
+  - intent: affirm
+  - slot_was_set:
+    - bag: true
+  - action: find_person_form
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - requested_slot: hat
+  - intent: deny
+  - slot_was_set:
+    - hat: false
+  - action: find_person_form
+  - slot_was_set:
+    - hat: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_find_person_form
+  - intent: affirm
+  - action: action_submit
+
+- story: 4 - Searching for a Person, Interrupted
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: finding_someone
+    entities:
+    - gender: male
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: male
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - requested_slot: bag
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 5 - Beginning a Person Search, then Halting
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: finding_someone
+    entities:
+    - gender: female
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - session_started_metadata: null
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - requested_slot: bag
+  - intent: inform
+    entities:
+    - gender: female
+    - negation: not
+    - clothing: bag 
+  - slot_was_set:
+    - bag: false
+  - action: find_person_form
+  - slot_was_set:
+    - bag: false
+  - slot_was_set:
+    - requested_slot: hat
+  - intent: stop
+    entities:
+    - gender: female
+  - action: action_reset
+  - action: utter_help
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 6 - Flexible Person Search
+  steps:
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: false
+  - slot_was_set:
+    - hat: true
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - member_group: saturnino fabrizio
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - position: 2nd
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - session_started_metadata: null
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: false
+  - slot_was_set:
+    - hat: true
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - member_group: saturnino fabrizio
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - position: 2nd
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 7 - Dynamic Crowd Analysis
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: count_people
+    entities:
+    - line: alpha line
+    - passages: 4 times
+  - action: action_count_people
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages:
+      - 4
+      - true
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null   
+  - action: utter_ask_stopping
+  - intent: count_people
+    entities:
+    - clothing: hat
+  - action: action_count_people
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: true
+  - slot_was_set:
+    - line1_passages:
+      - 4
+      - true
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null 
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 8 - Advanced Person Identification
+  steps:
+  - intent: count_people
+    entities:
+    - clothing: bag
+    - negation: don't
+    - clothing: hat
+  - action: action_count_people
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: false
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - action: utter_ask_stopping
+  - intent: count_people
+    entities:
+    - clothing: hat
+  - action: action_count_people
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: true
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - action: utter_ask_stopping
+  - intent: finding_someone
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - session_started_metadata: null
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - requested_slot: gender
+  - intent: inform
+    entities:
+    - gender: female
+  - slot_was_set:
+    - gender: female
+  - action: find_person_form
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - requested_slot: bag
+  - intent: doubt
+  - slot_was_set:
+    - bag: None
+  - action: find_person_form
+  - slot_was_set:
+    - bag: None
+  - slot_was_set:
+    - requested_slot: hat
+  - intent: deny
+  - slot_was_set:
+    - hat: false
+  - action: find_person_form
+  - slot_was_set:
+    - hat: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_find_person_form
+  - intent: inform
+    entities:
+    - gender: female
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: None
+  - slot_was_set:
+    - hat: false
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - session_started_metadata: null
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: false
+  - slot_was_set:
+    - requested_slot: bag
+  - intent: doubt
+  - slot_was_set:
+    - bag: None
+  - action: find_person_form
+  - slot_was_set:
+    - bag: None
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_find_person_form
+  - intent: affirm
+  - action: action_submit
+
+- story: 9 - Several Counting Requests
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: count_people
+    entities:
+    - negation: neither
+    - clothing: bag
+    - negation: nor
+    - clothing: hat
+  - action: action_count_people
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: false
+  - slot_was_set:
+    - hat: false
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - action: utter_ask_stopping
+  - intent: count_people
+    entities:
+    - negation: don't
+    - clothing: bag
+    - clothing: hat
+  - action: action_count_people
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: false
+  - slot_was_set:
+    - hat: true
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - action: utter_ask_stopping
+  - intent: count_people
+    entities:
+    - negation: don't
+    - gender: male
+    - clothing: hat
+  - action: action_count_people
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: false
+  - slot_was_set:
+    - hat: true
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - action: utter_ask_stopping
+  - intent: count_people
+    entities:
+    - gender: female
+    - negation: don't
+    - clothing: bag
+  - action: action_count_people
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: true
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 10 - Submit Form with a Thanks Intent
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: finding_someone
+    entities:
+    - negation: not
+    - clothing: bag
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: false
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - requested_slot: null
+  - slot_was_set:
+    - session_started_metadata: null
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - bag: false
+  - slot_was_set:
+    - requested_slot: gender
+  - intent: doubt
+  - slot_was_set:
+    - gender: None
+  - action: find_person_form
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - requested_slot: gender
+  - intent: inform
+    entities:
+    - gender: male
+  - slot_was_set:
+    - gender: male
+  - action: find_person_form
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - requested_slot: hat
+  - intent: deny
+  - slot_was_set:
+    - hat: false
+  - action: find_person_form
+  - slot_was_set:
+    - hat: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_find_person_form
+  - intent: thanks
+  - action: action_submit
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 11 - Counting Groups and filter number of groups by score
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: count_groups
+  - action: action_reset_old_slot
+  - action: action_count_groups
+  - slot_was_set:
+    - score: null
+  - action: utter_ask_stopping
+  - intent: group_id
+  - action: action_reset_old_slot
+  - action: action_group_id
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - score: null 
+  - action: utter_ask_stopping
+  - intent: count_groups
+    entities:
+    - negation: don't
+    - mark: 0.700
+  - action: action_reset_old_slot
+  - action: action_count_groups
+  - slot_was_set:
+    - score:
+      - 0.700
+      - false
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 12 - Several Requests on Competition
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: have_partecipated
+    entities:
+    - member_group: Zottarelli Egidio
+  - action: action_reset_old_slot
+  - action: action_have_partecipated
+  - slot_was_set:
+    - member_group: Zottarelli Egidio
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null   
+  - action: utter_ask_stopping
+  - intent: classification
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - member_group: Zottarelli Egidio
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null 
+  - action: utter_ask_stopping
+  - intent: members_group
+  - action: action_reset_old_slot
+  - action: action_members_group 
+  - slot_was_set:
+    - member_group: Zottarelli Egidio
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null 
+  - action: utter_ask_stopping
+  - intent: score_done
+  - action: action_reset_old_slot
+  - action: action_score_done
+  - slot_was_set:
+    - member_group: Zottarelli Egidio
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null 
+  - action: utter_ask_stopping
+  - intent: group_id
+  - action: action_reset_old_slot
+  - action: action_group_id
+  - slot_was_set:
+    - member_group: Zottarelli Egidio
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null 
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 13 - Different Question on Competition not related
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: classification
+    entities:
+    - group_ID: 1
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: 1
+  - slot_was_set:
+    - score: null  
+  - action: utter_ask_stopping
+  - intent: members_group
+  - action: action_reset_old_slot
+  - action: action_members_group
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: 1
+  - slot_was_set:
+    - score: null 
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: count_groups
+    entities:
+    - mark:  zero point six points
+  - action: action_reset_old_slot
+  - action: action_count_groups
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - score:
+      - 0.6
+      - true
+  - action: utter_ask_stopping
+  - intent: classification
+    entities:
+    - position: first
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: 1st
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - score:
+      - 0.6
+      - true 
+  - action: utter_ask_stopping
+  - intent: score_done
+  - action: action_reset_old_slot
+  - action: action_score_done
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: 1st
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - score:
+      - 0.6
+      - true 
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+    
+- story: 14 - Slot management
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: members_group
+    entities:
+    - group_ID: 4
+  - action: action_reset_old_slot
+  - action: action_members_group
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: 4
+  - action: utter_ask_stopping
+  - intent: classification
+    entities:
+    - position: second
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: 2nd
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: classification
+    entities:
+    - member_group: saturnino fabrizio
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - member_group: saturnino fabrizio
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 15 - Long flow of conversation
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: count_people
+    entities:
+    - gender: female
+    - clothing: bag
+  - action: action_count_people
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: classification
+    entities:
+    - position: first
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: 1st
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: have_partecipated
+    entities:
+    - member_group: lamb giovanni
+  - action: action_reset_old_slot
+  - action: action_have_partecipated
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - member_group: Lamb Giovanni
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: finding_someone
+    entities:
+    - gender: male
+    - clothing: bag
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - member_group: Lamb Giovanni
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - requested_slot: null 
+  - slot_was_set:
+    - session_started_metadata: null
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - requested_slot: hat
+  - intent: doubt
+  - slot_was_set:
+    - hat: None
+  - action: find_person_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_find_person_form
+  - intent: affirm
+  - action: action_submit
+  - intent: thanks
+  - action: utter_thanks
+  - intent: members_group 
+    entities:
+    - member_group: palma orlando
+  - action: action_reset_old_slot
+  - action: action_members_group
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - member_group: palma orlando
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: count_groups
+    entities:
+    - mark: zero point zero zero one points
+  - action: action_reset_old_slot
+  - action: action_count_groups
+  - slot_was_set:
+    - score:
+      - 0.001
+      - true
+  - action: utter_ask_stopping
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+ 
+- story: 16 - Two flow of conversation
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: have_partecipated
+    entities:
+    - member_group: sessa antonio
+  - action: action_reset_old_slot
+  - action: action_have_partecipated
+  - slot_was_set:
+    - member_group: sessa antonio
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: classification
+    entities:
+    - member_group: martano pietro
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - member_group: martano pietro
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: count_groups
+    entities:
+    - mark: 0.05
+  - action: action_reset_old_slot
+  - action: action_count_groups
+  - slot_was_set:
+    - score:
+      - 0.05
+      - true
+  - action: utter_ask_stopping
+  - intent: members_group
+    entities:
+    - position: 3rd
+  - action: action_reset_old_slot
+  - action: action_members_group 
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: 3rd
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 17 - Counting people then question on contest
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: count_people
+    entities:
+    - gender: female
+    - clothing: bag
+    - line: alpha line 
+    - passages: 4 times
+  - action: action_count_people
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages:
+      - 4
+      - true
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null 
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null 
+  - action: utter_ask_stopping
+  - intent: classification
+    entities:
+    - member_group: zottarelli egidio
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages:
+      - 4
+      - true
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null 
+  - slot_was_set:
+    - member_group: zottarelli egidio
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: count_groups
+  - action: action_reset_old_slot
+  - action: action_count_groups
+  - action: utter_ask_stopping
+  - intent: group_id
+  - action: action_reset_old_slot
+  - action: action_group_id
+  - action: utter_ask_stopping
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 18 - Searching people, reset, then question on contest
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: finding_someone
+    entities:
+    - gender: female
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - requested_slot: null 
+  - slot_was_set:
+    - session_started_metadata: null
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - requested_slot: bag
+  - intent: affirm
+  - slot_was_set:
+    - bag: true
+  - action: find_person_form
+  - slot_was_set:
+    - bag: true
+  - slot_was_set:
+    - requested_slot: hat
+  - intent: deny
+  - slot_was_set:
+    - hat: false
+  - action: find_person_form
+  - slot_was_set:
+    - hat: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_find_person_form
+  - intent: thanks
+  - action: action_submit
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: members_group
+    entities:
+    - group_ID: 10
+  - action: action_reset_old_slot
+  - action: action_members_group
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null 
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: 10
+  - action: utter_ask_stopping
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 19 - Have partecipated question then counting people
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: have_partecipated
+    entities:
+    - member_group: lamb giovanni
+  - action: action_reset_old_slot
+  - action: action_have_partecipated
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null 
+  - slot_was_set:
+    - member_group: lamb giovanni
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: classification
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null 
+  - slot_was_set:
+    - member_group: lamb giovanni
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: count_people
+    entities:
+    - gender: male
+  - action: action_count_people
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: null
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null 
+  - slot_was_set:
+    - member_group: lamb giovanni
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 20 -
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: finding_someone
+    entities:
+    - gender: male
+  - action: action_slot_mapping
+  - slot_was_set:
+    - gender: male
+  - action: find_person_form
+  - active_loop: find_person_form
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - requested_slot: bag
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - intent: count_groups
+    entities:
+    - mark: 0.700
+  - action: action_reset_old_slot
+  - action: action_count_groups
+  - slot_was_set:
+    - score:
+      - 0.700
+      - true
+  - action: utter_ask_stopping
+  - intent: group_id
+  - action: action_reset_old_slot
+  - action: action_group_id
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - score:
+      - 0.700
+      - true 
+  - action: utter_ask_stopping
+  - intent: thanks
+  - action: utter_thanks
+  - intent: members_group
+    entities:
+    - position: 3rd
+  - action: action_reset_old_slot
+  - action: action_members_group 
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: 3rd
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: members_group
+  - action: action_reset_old_slot
+  - action: action_members_group 
+  - slot_was_set:
+    - member_group: Zottarelli Egidio
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null 
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: count_people
+    entities:
+    - gender: male
+    - clothing: hat
+  - action: action_count_people
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: true
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages: null
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - action: utter_ask_stopping
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 21 -
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: members_group
+    entities:
+    - position: 3rd
+  - action: action_reset_old_slot
+  - action: action_members_group 
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: 3rd
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: count_groups
+  - action: action_reset_old_slot
+  - action: action_count_groups
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: 3rd
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping 
+  - intent: thanks
+  - action: utter_thanks
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: classification
+    entities:
+    - member_group: saturnino fabrizio
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - member_group: saturnino fabrizio
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - action: utter_ask_stopping
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+  - intent: score_done
+    entities:
+    - position: first
+  - action: action_reset_old_slot
+  - action: action_score_done
+  - slot_was_set:
+    - member_group: null 
+  - slot_was_set:
+    - position: 1st
+  - slot_was_set:
+    - group_ID: null 
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: 22 -
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: count_groups
+    entities:
+    - mark: 0.800
+  - action: action_reset_old_slot
+  - action: action_count_groups
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - score:
+      - 0.800
+      - true
+  - action: utter_ask_stopping
+  - intent: group_id
+  - action: action_reset_old_slot
+  - action: action_group_id
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - score:
+      - 0.800
+      - true 
+  - action: utter_ask_stopping
+  - intent: members_group
+  - action: action_reset_old_slot
+  - action: action_members_group 
+  - slot_was_set:
+    - member_group: null
+  - slot_was_set:
+    - position: null
+  - slot_was_set:
+    - group_ID: null
+  - slot_was_set:
+    - score:
+      - 0.800
+      - true  
+  - action: utter_ask_stopping
+  - intent: stop
+  - action: action_reset
+  - action: utter_help
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: Fallback sentences followed by a counting request
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+  - intent: count_people
+    entities:
+    - negation: not
+    - clothing: hat
+    - line: beta line
+    - passages: fifty-five times
+  - action: action_count_people
+  - slot_was_set:
+    - gender: null
+  - slot_was_set:
+    - bag: null
+  - slot_was_set:
+    - hat: true
+  - slot_was_set:
+    - line1_passages: null
+  - slot_was_set:
+    - line2_passages:
+      - 55
+      - true
+  - slot_was_set:
+    - line3_passages: null
+  - slot_was_set:
+    - line4_passages: null
+  - action: utter_ask_stopping
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye
+
+- story: Fallback sentences followed by a classification request
+  steps:
+  - intent: greet
+  - action: action_reset
+  - action: utter_greet
+  - action: utter_help
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+  - intent: classification
+    entities:
+    - position: last
+  - action: action_reset_old_slot
+  - action: action_classification
+  - slot_was_set:
+    - position: 14th
+  - action: utter_ask_stopping
+  - intent: goodbye
+  - action: action_reset
+  - action: utter_goodbye

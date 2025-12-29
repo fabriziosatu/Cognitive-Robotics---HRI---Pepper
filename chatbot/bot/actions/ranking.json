@@ -1,0 +1,18 @@
+{
+    "groups": [
+        {"id": 1, "score": 0.895, "position":"1st", "group_members": ["Sessa Antonio", "Molinario Angelo", "Martano Pietro", "Ranauro Massimiliano"]},
+        {"id": 2, "score": 0.594, "position":"11th", "group_members":["Magliulo Marco", "Moraru  Maximilian Marius", "Schirò Valentina Carmen", "Romano Christian"]},
+        {"id": 3, "score": 0.787, "position":"5th", "group_members":["Martelli Marco", "Marino Andrea", "Marmo Alberto", "Pasquale Alessandro"]},
+        {"id": 4, "score": 0.513, "position":"13th", "group_members":["Cardamone Agostino", "Dobrev Viktor Yanchev", "Ferraioli Chiara", "Antonucci Asja"]},
+        {"id": 5, "score": 0.8, "position": "4th", "group_members":["Del Gaudio Nunzio", "De Angelis Christian Salvatore", "Aliberti Carmine", "Casella Giovanni"]},
+        {"id": 6, "score": 0.882, "position":"2nd", "group_members":["Alberti Andrea", "Attianese Carmine", "Capaldo Vincenzo", "Esposito Paolo"]},
+        {"id": 7, "score": 0.725, "position":"8th", "group_members":["Martino Michele", "Senese Benito", "Ommeniello Giovanni", "Nicolò Emanuele Alfonso"]},
+        {"id": 8, "score": 0.862, "position":"3rd", "group_members":["Micera Valentina", "Sbardella Raffaele", "Setolino Ciro", "Volpe Jacopo"]},
+        {"id": 9, "score": 0.667, "position":"9th", "group_members": ["Oltean Bianca", "Oltean Miruna", "Lebourg Quentin", "Engel Alexandre"]},
+        {"id": 10, "score": 0.751, "position":"6th", "group_members":["Lamb Giovanni", "Zottarelli Egidio", "Saturnino Fabrizio", "Orlando Palma"]},
+        {"id": 12, "score": 0.729, "position":"7th", "group_members":["Rescigno Andrea", "Zappullo Pietro", "Petti Pasquale", "Lamberti Mattia"]},
+        {"id": 13, "score": 0.562, "position":"12th", "group_members":["Russomando Antonio", "Memoli Luca", "Solimeno Raffaele"]},
+        {"id": 14, "score": 0.662, "position":"10th", "group_members":["Marotta Giuseppe", "Tramice Davide", "Zaza Vincent"]},
+        {"id": 15, "score": 0.488, "position":"14th", "group_members": ["Nappo Domenico", "Prugno Siniscalchi Samuel", "Valentino Miriam", "Parolise Gaetano"]}
+    ]
+}

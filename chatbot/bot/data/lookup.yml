@@ -1,0 +1,975 @@
+version: '3.1'
+nlu:
+- lookup: gender
+  examples: |
+    - aunt
+    - auntie
+    - boyfriend
+    - boys
+    - brother
+    - brothers
+    - dad
+    - dads
+    - daughter
+    - dudes
+    - father
+    - fathers
+    - female
+    - females
+    - gal
+    - gals
+    - gal
+    - gentleman
+    - gentlemen
+    - girlfriends
+    - girl
+    - girls
+    - grandma
+    - granddaughters
+    - grandfathers
+    - grandmas
+    - grandsons
+    - guy
+    - guys
+    - he
+    - her
+    - him
+    - hoodies
+    - husband
+    - husbands
+    - ladies
+    - lady
+    - mama
+    - male
+    - males
+    - man
+    - men
+    - miss
+    - moms
+    - mother
+    - mothers
+    - nephew
+    - nephews
+    - niece
+    - papa
+    - papas
+    - she
+    - sister
+    - sisters
+    - son
+    - sons
+    - uncle
+    - uncles
+    - wife
+    - woman
+    - women
+
+- lookup: clothing
+  examples: |
+    - backpack
+    - bag
+    - bags
+    - beanie
+    - beret
+    - cap
+    - caps
+    - fedora
+    - handbag
+    - hat
+    - hats
+    - knapsack
+    - purse
+    - rucksack
+    - snapback
+    - trilby
+    - visor
+
+- lookup: negation
+  examples: |
+    - aren't
+    - can't
+    - don't
+    - didn't
+    - hasn't
+    - haven't
+    - isn't
+    - neither
+    - never
+    - no
+    - nobody
+    - none
+    - nope
+    - nor
+    - not
+    - nothing
+    - nowhere
+    - non
+    - wasn't
+    - weren't
+    - without
+    - won't
+    - less
+    - maximum
+    - failed
+
+- lookup: position
+  examples: |
+    - first
+    - second
+    - third
+    - fourth
+    - fifth
+    - sixth
+    - seventh
+    - eighth
+    - ninth
+    - tenth
+    - eleventh
+    - twelfth
+    - thirteenth
+    - fourteenth
+    - fifteenth
+    - sixteenth
+    - seventeenth
+    - eighteenth
+    - nineteenth
+    - twentieth
+    - twenty first
+    - twenty second
+    - twenty third
+    - twenty fourth
+    - twenty fifth
+    - twenty sixth
+    - twenty seventh
+    - twenty eighth
+    - twenty ninth
+    - thirtieth
+    - thirty first
+    - thirty second
+    - thirty third
+    - thirty fourth
+    - thirty fifth
+    - 1st
+    - 2nd
+    - 3rd
+    - 4th
+    - 5th
+    - 6th
+    - 7th
+    - 8th
+    - 9th
+    - 10th
+    - 11th
+    - 12th
+    - 13th
+    - 14th
+    - 15th
+    - 16th
+    - 17th
+    - 18th
+    - 19th
+    - 20th
+    - 21st
+    - 22nd
+    - 23rd
+    - 24th
+    - 25th
+    - 26th
+    - 27th
+    - 28th
+    - 29th
+    - 30th
+    - 31st
+    - 32nd
+    - 33rd
+    - 34th
+    - 35th
+    - 36th
+    - 37th
+    - winner
+    - won
+    - win
+    - top
+    - lead
+    - victor
+    - champion
+    - leader
+    - primary
+    - last
+    - bottom ranked
+    - lowest placed
+    - final
+    - bottom
+
+- lookup: group_ID
+  examples: |  
+    - one
+    - 1
+    - two
+    - 2
+    - three
+    - 3
+    - four
+    - 4
+    - five
+    - 5
+    - six
+    - 6
+    - seven
+    - 7
+    - eight
+    - 8
+    - nine
+    - 9
+    - ten
+    - 10
+    - eleven
+    - 11
+    - twelve
+    - 12
+    - thirteen
+    - 13
+    - fourteen
+    - 14
+    - fifteen
+    - 15
+    - sixteen
+    - 16
+    - seventeen
+    - 17
+    - eighteen
+    - 18
+    - nineteen
+    - 19
+    - twenty
+    - 20
+    - twenty-one
+    - 21
+    - twenty-two
+    - 22
+    - twenty-three
+    - 23
+    - twenty-four
+    - 24
+    - twenty-five
+    - 25
+    - twenty-six
+    - 26
+    - twenty-seven
+    - 27
+    - twenty-eight
+    - 28
+    - twenty-nine
+    - 29
+    - thirty
+    - 30
+
+- lookup: member_group
+  examples: | 
+    - sessa antonio  
+    - molinario angelo  
+    - martano pietro  
+    - ranauro massimiliano  
+    - magliulo marco  
+    - moraru  maximilian marius  
+    - schirò valentina carmen  
+    - romano christian  
+    - martelli marco  
+    - marino andrea  
+    - marmo alberto  
+    - pasquale alessandro  
+    - cardamone agostino  
+    - dobrev viktor yanchev  
+    - ferraioli chiara  
+    - antonucci asja  
+    - del gaudio nunzio  
+    - de angelis christian salvatore  
+    - aliberti carmine  
+    - casella giovanni  
+    - alberti andrea  
+    - attianese carmine  
+    - capaldo vincenzo  
+    - esposito paolo  
+    - martino michele  
+    - senese benito  
+    - ommeniello giovanni  
+    - nicolò emanuele alfonso  
+    - micera valentina  
+    - sbardella raffaele  
+    - setolino ciro  
+    - volpe jacopo  
+    - oltean bianca  
+    - oltean miruna  
+    - lebourg quentin  
+    - engel alexandre  
+    - lamb giovanni  
+    - zottarelli egidio  
+    - saturnino fabrizio  
+    - orlando palma  
+    - rescigno andrea  
+    - zappullo pietro  
+    - petti pasquale  
+    - lamberti mattia  
+    - russomando antonio  
+    - memoli luca  
+    - solimeno raffaele  
+    - marotta giuseppe  
+    - tramice davide  
+    - zaza vincent  
+    - nappo domenico  
+    - prugno siniscalchi samuel  
+    - valentino miriam  
+    - parolise gaetano
+    - antonio sessa
+    - angelo molinario
+    - pietro martano
+    - massimiliano ranauro
+    - marco magliulo
+    - marius maximilian moraru
+    - carmen valentina schirò
+    - christian romano
+    - marco martelli
+    - andrea marino
+    - alberto marmo
+    - alessandro pasquale
+    - agostino cardamone
+    - viktor yanchev dobrev
+    - chiara ferraioli
+    - asja antonucci
+    - nunzio del gaudio
+    - christian salvatore de angelis
+    - carmine aliberti
+    - giovanni casella
+    - andrea alberti
+    - carmine attianese
+    - vincenzo capaldo
+    - paolo esposito
+    - michele martino
+    - benito senese
+    - giovanni ommeniello
+    - alfonso emanuele nicolò
+    - valentina micera
+    - raffaele sbardella
+    - ciro setolino
+    - jacopo volpe
+    - bianca oltean
+    - miruna oltean
+    - quentin lebourg
+    - alexandre engel
+    - giovanni lamb
+    - egidio zottarelli
+    - fabrizio saturnino
+    - palma orlando
+    - andrea rescigno
+    - pietro zappullo
+    - pasquale petti
+    - mattia lamberti
+    - antonio russomando
+    - luca memoli
+    - raffaele solimeno
+    - giuseppe marotta
+    - davide tramice
+    - vincent zaza
+    - domenico nappo
+    - samuel prugno siniscalchi
+    - miriam valentino
+    - gaetano parolise
+    - Sessa Antonio
+    - Molinario Angelo
+    - Martano Pietro
+    - Ranauro Massimiliano
+    - Magliulo Marco
+    - Moraru Maximilian Marius
+    - Schirò Valentina Carmen
+    - Romano Christian
+    - Martelli Marco
+    - Marino Andrea
+    - Marmo Alberto
+    - Pasquale Alessandro
+    - Cardamone Agostino
+    - Dobrev Viktor Yanchev
+    - Ferraioli Chiara
+    - Antonucci Asja
+    - Del Gaudio Nunzio
+    - De Angelis Christian Salvatore
+    - Aliberti Carmine
+    - Casella Giovanni
+    - Alberti Andrea
+    - Attianese Carmine
+    - Capaldo Vincenzo
+    - Esposito Paolo
+    - Martino Michele
+    - Senese Benito
+    - Ommeniello Giovanni
+    - Nicolò Emanuele Alfonso
+    - Micera Valentina
+    - Sbardella Raffaele
+    - Setolino Ciro
+    - Volpe Jacopo
+    - Oltean Bianca
+    - Oltean Miruna
+    - Lebourg Quentin
+    - Engel Alexandre
+    - Lamb Giovanni
+    - Zottarelli Egidio
+    - Saturnino Fabrizio
+    - Orlando Palma
+    - Rescigno Andrea
+    - Zappullo Pietro
+    - Petti Pasquale
+    - Lamberti Mattia
+    - Russomando Antonio
+    - Memoli Luca
+    - Solimeno Raffaele
+    - Marotta Giuseppe
+    - Tramice Davide
+    - Zaza Vincent
+    - Nappo Domenico
+    - Prugno Siniscalchi Samuel
+    - Valentino Miriam
+    - Parolise Gaetano
+    - Antonio Sessa
+    - Angelo Molinario
+    - Pietro Martano
+    - Massimiliano Ranauro
+    - Marco Magliulo
+    - Marius Maximilian Moraru
+    - Carmen Valentina Schirò
+    - Christian Romano
+    - Marco Martelli
+    - Andrea Marino
+    - Alberto Marmo
+    - Alessandro Pasquale
+    - Agostino Cardamone
+    - Viktor Yanchev Dobrev
+    - Chiara Ferraioli
+    - Asja Antonucci
+    - Nunzio Del Gaudio
+    - Christian Salvatore De Angelis
+    - Carmine Aliberti
+    - Giovanni Casella
+    - Andrea Alberti
+    - Carmine Attianese
+    - Vincenzo Capaldo
+    - Paolo Esposito
+    - Michele Martino
+    - Benito Senese
+    - Giovanni Ommeniello
+    - Alfonso Emanuele Nicolò
+    - Valentina Micera
+    - Raffaele Sbardella
+    - Ciro Setolino
+    - Jacopo Volpe
+    - Bianca Oltean
+    - Miruna Oltean
+    - Quentin Lebourg
+    - Alexandre Engel
+    - Giovanni Lamb
+    - Egidio Zottarelli
+    - Fabrizio Saturnino
+    - Palma Orlando
+    - Andrea Rescigno
+    - Pietro Zappullo
+    - Pasquale Petti
+    - Mattia Lamberti
+    - Antonio Russomando
+    - Luca Memoli
+    - Raffaele Solimeno
+    - Giuseppe Marotta
+    - Davide Tramice
+    - Vincent Zaza
+    - Domenico Nappo
+    - Samuel Prugno Siniscalchi
+    - Miriam Valentino
+    - Gaetano Parolise
+
+- lookup: passages
+  examples: |
+    - 1 time
+    - once
+    - one time
+    - 2 times
+    - twice
+    - two times
+    - 3 times
+    - three times
+    - 4 times
+    - four times
+    - 5 times
+    - five times
+    - 6 times
+    - six times
+    - 7 times
+    - seven times
+    - 8 times
+    - eight times
+    - 9 times
+    - nine times
+    - 10 times
+    - ten times
+    - 11 times
+    - eleven times
+    - 12 times
+    - twelve times
+    - 13 times
+    - thirteen times
+    - 14 times
+    - fourteen times
+    - 15 times
+    - fifteen times
+    - 16 times
+    - sixteen times
+    - 17 times
+    - seventeen times
+    - 18 times
+    - eighteen times
+    - 19 times
+    - nineteen times
+    - 20 times
+    - twenty times
+    - 21 times
+    - twenty-one times
+    - 22 times
+    - twenty-two times
+    - 23 times
+    - twenty-three times
+    - 24 times
+    - twenty-four times
+    - 25 times
+    - twenty-five times
+    - 26 times
+    - twenty-six times
+    - 27 times
+    - twenty-seven times
+    - 28 times
+    - twenty-eight times
+    - 29 times
+    - twenty-nine times
+    - 30 times
+    - thirty times
+    - 31 times
+    - thirty-one times
+    - 32 times
+    - thirty-two times
+    - 33 times
+    - thirty-three times
+    - 34 times
+    - thirty-four times
+    - 35 times
+    - thirty-five times
+    - 36 times
+    - thirty-six times
+    - 37 times
+    - thirty-seven times
+    - 38 times
+    - thirty-eight times
+    - 39 times
+    - thirty-nine times
+    - 40 times
+    - forty times
+    - 41 times
+    - forty-one times
+    - 42 times
+    - forty-two times
+    - 43 times
+    - forty-three times
+    - 44 times
+    - forty-four times
+    - 45 times
+    - forty-five times
+    - 46 times
+    - forty-six times
+    - 47 times
+    - forty-seven times
+    - 48 times
+    - forty-eight times
+    - 49 times
+    - forty-nine times
+    - 50 times
+    - fifty times
+    - 51 times
+    - fifty-one times
+    - 52 times
+    - fifty-two times
+    - 53 times
+    - fifty-three times
+    - 54 times
+    - fifty-four times
+    - 55 times
+    - fifty-five times
+    - 56 times
+    - fifty-six times
+    - 57 times
+    - fifty-seven times
+    - 58 times
+    - fifty-eight times
+    - 59 times
+    - fifty-nine times
+    - 60 times
+    - sixty times
+    - 61 times
+    - sixty-one times
+    - 62 times
+    - sixty-two times
+    - 63 times
+    - sixty-three times
+    - 64 times
+    - sixty-four times
+    - 65 times
+    - sixty-five times
+    - 66 times
+    - sixty-six times
+    - 67 times
+    - sixty-seven times
+    - 68 times
+    - sixty-eight times
+    - 69 times
+    - sixty-nine times
+    - 70 times
+    - seventy times
+    - 71 times
+    - seventy-one times
+    - 72 times
+    - seventy-two times
+    - 73 times
+    - seventy-three times
+    - 74 times
+    - seventy-four times
+    - 75 times
+    - seventy-five times
+    - 76 times
+    - seventy-six times
+    - 77 times
+    - seventy-seven times
+    - 78 times
+    - seventy-eight times
+    - 79 times
+    - seventy-nine times
+    - 80 times
+    - eighty times
+    - 81 times
+    - eighty-one times
+    - 82 times
+    - eighty-two times
+    - 83 times
+    - eighty-three times
+    - 84 times
+    - eighty-four times
+    - 85 times
+    - eighty-five times
+    - 86 times
+    - eighty-six times
+    - 87 times
+    - eighty-seven times
+    - 88 times
+    - eighty-eight times
+    - 89 times
+    - eighty-nine times
+    - 90 times
+    - ninety times
+    - 91 times
+    - ninety-one times
+    - 92 times
+    - ninety-two times
+    - 93 times
+    - ninety-three times
+    - 94 times
+    - ninety-four times
+    - 95 times
+    - ninety-five times
+    - 96 times
+    - ninety-six times
+    - 97 times
+    - ninety-seven times
+    - 98 times
+    - ninety-eight times
+    - 99 times
+    - ninety-nine times
+    - 100 times
+    - one hundred times
+    - 101 times
+    - one hundred and one times
+    - 102 times
+    - one hundred and two times
+    - 103 times
+    - one hundred and three times
+    - 104 times
+    - one hundred and four times
+    - 105 times
+    - one hundred and five times
+    - 106 times
+    - one hundred and six times
+    - 107 times
+    - one hundred and seven times
+    - 108 times
+    - one hundred and eight times
+    - 109 times
+    - one hundred and nine times
+    - 110 times
+    - one hundred and ten times
+    - 111 times
+    - one hundred and eleven times
+    - 112 times
+    - one hundred and twelve times
+    - 113 times
+    - one hundred and thirteen times
+    - 114 times
+    - one hundred and fourteen times
+    - 115 times
+    - one hundred and fifteen times
+    - 116 times
+    - one hundred and sixteen times
+    - 117 times
+    - one hundred and seventeen times
+    - 118 times
+    - one hundred and eighteen times
+    - 119 times
+    - one hundred and nineteen times
+    - 120 times
+    - one hundred and twenty times
+
+
+- lookup: mark
+  examples: |
+    - 0 
+    - zero
+    - 0.1 
+    - zero point one 
+    - 0.2 
+    - zero point two 
+    - 0.3 
+    - zero point three 
+    - 0.4 
+    - zero point four 
+    - 0.5 
+    - zero point five 
+    - 0.6 
+    - zero point six 
+    - 0.7 
+    - zero point seven 
+    - 0.8 
+    - zero point eight 
+    - 0.9 
+    - zero point nine 
+    - 1 
+    - one
+    - 1.1
+    - one point one
+    - 1.2
+    - one point two 
+    - 1.3
+    - one point three 
+    - 1.4
+    - one point four 
+    - 1.5
+    - 1.6
+    - one point six 
+    - 1.7
+    - one point seven 
+    - 1.8
+    - one point eight 
+    - 1.9
+    - one point nine
+    - 1.10
+    - one point one zero
+    - 1.15
+    - one point one five
+    - 1.25
+    - one point two five 
+    - 1.35
+    - one point three five 
+    - 1.45
+    - one point four five
+    - 1.55
+    - one point five five 
+    - 1.65
+    - one point six five 
+    - 1.75
+    - one point seven five
+    - 1.85
+    - one point eight five 
+    - 1.95
+    - one point nine five
+    - 0.15 
+    - zero point one five 
+    - 0.25 
+    - zero point two five 
+    - 0.35 
+    - zero point three five 
+    - 0.45 
+    - zero point four five 
+    - 0.55 
+    - zero point five five 
+    - 0.65 
+    - zero point six five 
+    - 0.75 
+    - zero point seven five 
+    - 0.85 
+    - zero point eight five 
+    - 0.95 
+    - zero point nine five 
+    - 2 
+    - two
+    - 2.1
+    - two point one
+    - 2.2
+    - two point two 
+    - 2.3
+    - two point three
+    - 2.4
+    - two point four 
+    - 2.5
+    - two point five 
+    - 2.6
+    - two point six 
+    - 2.7
+    - two point seven 
+    - 2.8
+    - two point eight 
+    - 2.9
+    - two point nine
+    - 2.15
+    - two point one five zero
+    - 2.25
+    - two point two five zero
+    - 2.35
+    - two point three five zero
+    - 2.45
+    - two point four five zero
+    - 2.55
+    - two point five five zero
+    - 2.65
+    - two point six five zero
+    - 2.75
+    - two point seven five zero
+    - 2.85
+    - two point eight five zero
+    - 2.95
+    - two point nine five zero
+    - 0.150 
+    - zero point one five zero 
+    - 0.250 
+    - zero point two five zero 
+    - 0.350 
+    - zero point three five zero 
+    - 0.450 
+    - zero point four five zero 
+    - 0.550 
+    - zero point five five zero 
+    - 0.650 
+    - zero point six five zero 
+    - 0.750 
+    - zero point seven five zero 
+    - 0.850 
+    - zero point eight five zero 
+    - 0.950 
+    - zero point nine five zero 
+    - 0.155 
+    - zero point one five five 
+    - 0.255 
+    - zero point two five five 
+    - 0.355 
+    - zero point three five five 
+    - 0.455 
+    - zero point four five five 
+    - 0.555 
+    - zero point five five five 
+    - 0.655 
+    - zero point six five five 
+    - 0.755 
+    - zero point seven five five 
+    - 0.855 
+    - zero point eight five five 
+    - 0.955 
+    - zero point nine five five 
+    - 0.01 
+    - zero point zero one 
+    - 0.02 
+    - zero point zero two 
+    - 0.03 
+    - zero point zero three 
+    - 0.04 
+    - zero point zero four 
+    - 0.05 
+    - zero point zero five 
+    - 0.06 
+    - zero point zero six 
+    - 0.07 
+    - zero point zero seven 
+    - 0.08 
+    - zero point zero eight 
+    - 0.09 
+    - zero point zero nine 
+    - 0.010 
+    - zero point zero one zero 
+    - 0.020 
+    - zero point zero two zero 
+    - 0.030 
+    - zero point zero three zero 
+    - 0.040 
+    - zero point zero four zero 
+    - 0.050 
+    - zero point zero five zero 
+    - 0.060 
+    - zero point zero six zero 
+    - 0.070 
+    - zero point zero seven zero 
+    - 0.080 
+    - zero point zero eight zero 
+    - 0.090 
+    - zero point zero nine zero 
+    - 0.001 
+    - zero point zero zero one 
+    - 0.002 
+    - zero point zero zero two 
+    - 0.003 
+    - zero point zero zero three 
+    - 0.004 
+    - zero point zero zero four 
+    - 0.005 
+    - zero point zero zero five 
+    - 0.006 
+    - zero point zero zero six 
+    - 0.007 
+    - zero point zero zero seven 
+    - 0.008 
+    - zero point zero zero eight 
+    - 0.009 
+    - zero point zero zero nine 
+    - 0.100 
+    - zero point one zero zero 
+    - 0.200 
+    - zero point two zero zero 
+    - 0.300 
+    - zero point three zero zero 
+    - 0.400 
+    - zero point four zero zero 
+    - 0.500 
+    - zero point five zero zero 
+    - 0.600 
+    - zero point six zero zero 
+    - 0.700 
+    - zero point seven zero zero 
+    - 0.800 
+    - zero point eight zero zero 
+    - 0.900 
+    - zero point nine zero zero 
+    - 0.10 
+    - zero point one zero 
+    - 0.20 
+    - zero point two zero 
+    - 0.30 
+    - zero point three zero 
+    - 0.40 
+    - zero point four zero 
+    - 0.50 
+    - zero point five zero 
+    - 0.60 
+    - zero point six zero 
+    - 0.70 
+    - zero point seven zero 
+    - 0.80 
+    - zero point eight zero 
+    - 0.90 
+    - zero point nine zero 
+    

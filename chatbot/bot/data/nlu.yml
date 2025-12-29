@@ -1,0 +1,1117 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey, pepper!
+    - hello, pepper!
+    - hi, pepper!
+    - hello there, pepper!
+    - good morning, pepper!
+    - good evening, pepper!
+    - good afternoon, pepper!
+    - moin
+    - hey there, pepper!
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - what's up, pepper?
+    - yo, pepper!
+    - pepper, my buddy!
+    - hi
+    - hi, Pepper
+    - Hello Pepper!
+    - Hi Robot!
+    - Hello robot
+    - Hello there!
+    - Hello, robot
+    - Hello
+
+- intent: goodbye
+  examples: |
+    - Goodbye, Pepper!
+    - See u later, Pepper!
+    - Farewell, Pepper!
+    - Bye, Pepper!
+    - See you around!
+    - Bye-bye, Pepper!
+    - Sayonara!
+    - Take care, Pepper! You've been a great help.
+    - Until next time, Pepper! You've been fantastic.
+    - Pepper, it's been a pleasure. Until we meet again.
+    - So long, Pepper! I appreciate your assistance.
+    - Pepper, our chat was great. Bye for now!
+    - Bye for now, Pepper. You were very helpful.
+    - I must be going, Pepper. It was good to talk with you.
+    - Pepper, I'll see you soon. Thanks for everything.
+    - Goodbye for now, Pepper. I enjoyed our time together.
+    - bye-bye pepper
+    - ok. bye pepper.
+    - Bye Pepper!
+    - Bye.
+    - Bye!
+    - Bye bye.
+    - ok. bye
+    - bye
+
+- intent: capabilities
+  examples: |
+    - What can u do?
+    - What are you capable of?
+    - What skills do you have?
+    - What are your abilities?
+    - What tasks can you perform?
+    - What functions can you execute?
+    - What services do you offer?
+    - What’s your purpose?
+    - What kind of tasks can you handle?
+    - What’s your role here?
+    - What kind of help can you provide?
+    - What is your job?
+    - What’s your job around here?
+    - What problems can you solve?
+    - What kinda stuff can you handle?
+    - What's your skills?
+    - Could u help me?
+    - Cold you help me?
+    - Could you help me?
+    - can you assist me?
+    - Can you explain what you do?
+    - Can u explain what u do?
+    - Can you guide me?
+    - Can ya help me out?
+    - How can you help me?
+    - Tell me your capabilities
+    - Tell me what you can do
+    - So, what can u do?
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - Yeah
+    - sure
+    - Yup
+    - absolutely
+    - indeed
+    - of course
+    - exactly
+    - that sounds good
+    - correct
+    - ye
+    - uh yes
+    - um yes
+    - yes yes
+    - I think so
+    - yep
+    - Yes. She does.
+    - Yes. He does.
+    - Yes, I would like to submit the form as is.
+    - yes. I would like submit it.
+    - Yes. Everything is correct.
+    - Yes. I wanna submit it.
+    - Yes. You can go ahead.
+    - Yes, that’s right
+    - Yes, please
+    - Yes, please proceed
+    - Yes, I confirm
+    - Ok, yes
+    - Okay, yes
+    - ok ok
+    - Okay
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - nah
+    - I don't think so
+    - I don't believe so
+    - no way
+    - not really
+    - nope
+    - uh not
+    - um not
+    - Hmm, no
+    - not at all
+    - No. She doesn't
+    - No. she doesn't
+    - No. He doesn't
+    - No. he doesn't
+    - No, that’s not correct
+    - No, sorry
+    - No, no, no
+
+- intent: doubt
+  examples: |
+    - boh
+    - i don't know
+    - i am not sure about that
+    - i am uncertain at the moment
+    - i cant' recall right now
+    - I can't remember at this time
+    - I'm drawing a blank right now
+    - i am unsure about that.
+    - At the moment I do not remember. I am too agitated
+    - As i said before, I don't remember now.
+    - I don't remember at the moment, sorry.
+    - I'm sorry, but I don't remember at the moment.
+    - I don't remember. Sorry.
+    - Like I said before, I still don't remember.
+    - i cannot remember now
+
+- intent: thanks
+  examples: |
+    - thank you, Pepper
+    - i am very thankful
+    - thanks
+    - i am grateful
+    - thanks anyway
+    - Grateful
+    - thankfulness
+    - i cannot thank you enough
+    - perfect, thank you
+    - oh thank you
+    - grateful
+    - thank u
+    - Ok thanks
+    - ok. thanks anyway
+    - ok thanks
+    - ok thanks anyway.
+    - Ok. Thanks anyway.
+    - Thanks for all.
+    - Thanks.
+    - Okay. Thanks for the service.
+    - okay. Thanks anyway.
+    - Thanks the same.
+
+- intent: stop
+  examples: |
+    - stop
+    - reset
+    - Nevermind, i found who i was looking for.
+    - I found it.
+    - please stop
+    - i want to stop
+    - stop the form
+    - Wait. I found it. I can see it.
+    - Wait. I found him. I can see him.
+    - Wait. I found her. I can see her.
+    - i wanna stop.
+    - Nevermind. She just called me.
+    - Don't worry. I found him. He just called me.
+    - Don't worry. I found her. She just called me.
+    - Stop.
+    - I wanna stop the search.
+    - you can stop
+    - stop, found him
+    - stop, found her
+    - I'm not looking for anyone
+    - I'm not trying to find someone
+
+- intent: count_people
+  examples: |
+    - How many people are wearing [head covering]{"entity": "clothing", "value": "hat"}?
+    - how many [male](gender) are in the mall?
+    - tell me how many [female](gender) are there
+    - do you know how many people are in the shopping mall?
+    - i wanna know how many people are in the mall
+    - can you tell me the number of people in the shop today?
+    - wha about the number of [male](gender)?
+    - and how many [female](gender)?
+    - could you tell me the number of [male](gender)?
+    - How many people are wearing [cap]{"entity": "clothing", "value": "hat"} and [knapsack]{"entity": "clothing", "value": "bag"}?
+    - How many people are carrying [handbag]{"entity": "clothing", "value": "bag"}?
+    - What's the number of individuals with [briefcase]{"entity": "clothing", "value": "bag"} present?
+    - What's the number of individuals with [hat](clothing) present?
+    - Can you tell me how many people are dressed in [fedora]{"entity": "clothing", "value": "hat"}?
+    - Is there at least one person wearing a [backpack]{"entity": "clothing", "value": "bag"} today?
+    - How many people [aren't](negation) wearing a [visor]{"entity": "clothing", "value": "hat"} but carrying [purse]{"entity": "clothing", "value": "bag"} instead?
+    - How many people [aren't](negation) wearing a [bag]{"entity": "clothing", "value": "bag"} but wear [hat]{"entity": "clothing", "value": "hat"} instead?
+    - Can you tell me if anyone has a [hat]{"entity": "clothing", "value": "hat"}?
+    - What's the count of individuals wearing [trilby]{"entity": "clothing", "value": "hat"} and carrying a [bag]{"entity": "clothing", "value": "bag"}?
+    - How many people are carrying a [bag](clothing) and [not](negation) wearing a [hat](clothing)?.
+    - Provide the number of individuals with [shoulder bag]{"entity": "clothing", "value": "bag"}.
+    - Provide the number of individuals with [bags]{"entity": "clothing", "value": "bag"} and [hats]{"entity": "clothing", "value": "hat"}.
+    - Can you tell me if someone is dressed in [headwear]{"entity": "clothing", "value": "hat"}?
+    - How many individuals have a [cap]{"entity": "clothing", "value": "hat"} but [not](negation) a [knapsack]{"entity": "clothing", "value": "bag"}?
+    - Is there at least one person carrying a [bag]{"entity": "clothing", "value": "bag"}?
+    - Is there at least one person wearing a [beanie]{"entity": "clothing", "value": "hat"}?
+    - Identify the number of people [without](negation) [hats]{"entity": "clothing", "value": "hat"}.
+    - Can you confirm if someone has a [bag]{"entity": "clothing", "value": "bag"}?
+    - Can you confirm if someone is wearing a [hat](clothing) and carrying a [bag](clothing)?
+    - How many individuals [aren't](negation) wearing [sombrero]{"entity": "clothing", "value": "hat"}?
+    - Are there individuals wearing [hats]{"entity": "clothing", "value": "hat"}?
+    - Identify the number of people who have crossed the [alpha line](line).
+    - how many people have passing through [beta line] one time?
+    - How many people have [caps]{"entity": "clothing", "value": "hat"} on their heads?
+    - How many people do [not](negation) have a [visor]{"entity": "clothing", "value": "hat"} on their heads?
+    - How many [guys]{"entity": "gender", "value": "male"} are currently wearing a [hat](clothing) but [not](negation) carrying a [backpack]{"entity": "clothing", "value": "bag"}?
+    - Tell me the count of folks [without](negation) a [beret]{"entity": "clothing", "value": "hat"}.
+    - Count the heads with [caps]{"entity": "clothing", "value": "hat"} on 'em.
+    - can you tell me the number of people carrying a [bag](clothing) [without](negation) a [visor]{"entity": "clothing", "value": "hat"}?
+    - and how many of them are wearing a [hat](clothing)?
+    - and how many is carrying a [bag](clothing)?
+    - and how many of them are [boys]{"entity": "gender", "value": "male"}?
+    - how many people are wearing [neither](negation) [hats]{"entity": "clothing", "value": "hat"} [nor](negation) [bags]{"entity": "clothing", "value": "bag"}?
+    - Tell me the count of [women]{"entity": "gender", "value": "female"} [without](negation) a [purse]{"entity": "clothing", "value": "bag"}.
+    - Tell me the number of [girls]{"entity": "gender", "value": "female"} wearing a [head covering]{"entity": "clothing", "value": "hat"} but [not](negation) carrying a [briefcase]{"entity": "clothing", "value": "bag"}.
+    - can u tell me the number of [boys]{"entity": "gender", "value": "male"} who [aren't](negation) wearing a [beanie]{"entity": "clothing", "value": "hat"} and are [not](negation) carrying a [rucksack]{"entity": "clothing", "value": "bag"}.
+    - how many [girls]{"entity": "gender", "value": "female"} are in the mall, today?
+    - how many [boys]{"entity": "gender", "value": "male"} [aren't](negation) currently wearing a [hat](clothing)?
+    - Are there any [dudes]{"entity": "gender", "value": "male"} carrying a [handbag]{"entity": "clothing", "value": "bag"}?
+    - Tell me the number of [women]{"entity": "gender", "value": "female"} who [didn't](negation) passed over the [beta line](line).
+    - Can u tell me if there are some [boys]{"entity": "gender", "value": "male"} crossing over [gamma line](line) that [aren't] carrying a [snapback]{"entity": "clothing", "value": "hat"}?
+    - Tell me the number of people who traversed at least [3 times](passages) the [delta line](line).
+    - how many [boys]{"entity": "gender", "value": "male"} [haven't](negation) stepped over [zeta line](line) [twice](passages)?
+    - count the number of people who have crossed the [alpha line](line) [once](passages).
+    - tell me how many [girls]{"entity": "gender", "value": "female"} passed the [b line](line) for at least [twenty-two times](passages).
+    - how many [men]{"entity": "gender", "value": "male"} have crossed the [g line](line) [five times](passages)?
+    - tell me the number of people who moved across the [delta line](line) for at least [two times](passages).
+    - tell me the number of people who [didn't](negation) crossed the [beta line](line) for more than [twenty-four times](passages).
+    - how many people [haven't](negation) crossed the [epsilon line](line) [twelve times](passages)?
+    - Are there any [women]{"entity": "gender", "value": "female"} [not](negation) carrying a [rucksack]{"entity": "clothing", "value": "bag"} and that have passed over the [alpha line](line) [one hundred times](passages)?
+    - can you telle me the count of people carrying a [bag](clothing) and who have gone past the [theta line](line) at least [one hundred and two times](passages)?
+    - could you tell me the amount of people that [haven't](negation) crossed the [lambda line](line) at least [one hundred and eleven times](passages)?
+    - could you count the people that have crossed past the [alpha line](line) at least [forty-one times](passages)?
+    - how many people have [not](negation) crossed by [betaline](line) [eleven times](passages)?
+    - how many people have crossed the [gammaline](line) at least [seventy-nine times](passages) and were wearing a beautiful [hat](clothing)?
+    - how many people have crossed the [deltaline](line) at least [fifty-six times](passages) and were carrying a [bag](clothing)?
+    - how many [women]{"entity": "gender", "value": "female"} have crossed over the [a line](line) [twenty-three times](passages)?
+    - how many people have crossed [eighty-nine times](passages) the [b line](line), today?
+    - how many people [haven't](negation) crossed [81 times](passages) the [g line](line), today?
+    - can u tell me the amount of people that have crossed the [d line](line) [less](negation) than [ninety-one times](passages)?
+    - how many people have crossed the [beta line](line) [less](negation) than [one time](passages)?
+    - can u tell me the count of people wearing a [hat](clothing) and that have passed the [alpha line](line) [seven times](passages)?
+    - do you know the amount of people that have crossed for more than [thirty-three times](passages) over the (beta line)(line)?
+    - do you know the count of people that have passed for [sixty times](passages) over the (gamma line)(line)?
+    - do you know the number of people that have [not](negation) crossed for [seventeen times](passages) the (delta line)(line)?
+    - could u tell me how many people [haven't](negation) passed the [zeta line](line) for [forty-eight times](passages)?
+    - Can u telle me the number of people wearing a [bag](clothing) and that have walked past the [tetha line](line) [four times](passages)?
+    - and how many [boys]{"entity": "gender", "value": "male"} have crossed the [gamma line](line) at least [six times](passages)?
+    - While I'm waiting, could u telle me how many people are wearing a [hat]{"entity": "clothing", "value": "hat"} and that [aren't](negation) carrying a [bag]{"entity": "clothing", "value": "bag"}?
+    - how many people of [male](gender) gender are currently wearing a [hat]{"entity": "clothing", "value": "hat"}?
+    - and how many of them are wearing a [hat](clothing)?
+    - Do you know how many people of [female](gender) gender wear [neither](negation) a [hat](clothing) [nor](negation) a [bag](clothing)?
+    - and how many people also wear a [hat]{"entity": "clothing", "value": "hat"}?
+    - can u tell me how many people [don't](negation) wear [hats]{"entity": "clothing", "value": "hat"}?
+    - and how many of them [don't](negation) carry a [bag]{"entity": "clothing", "value": "bag"}?
+    - and how many of them [don't](negation) wear a [hat]{"entity": "clothing", "value": "hat"}?
+    - and how many of them are [girls]{"entity": "gender", "value": "female"} and how many of them [don't](negation) wear a [hat](clothing)?
+    - how many are the people that are wearing a scarf?
+    - and how many of them are [boys]{"entity": "gender", "value": "male"}?
+    - how many are the people that [haven't](negation) stepped the [delta line](line) [17 times](passages)?
+    - Can you count the people [not](negation) having a [hat](clothing) and that have moved across the [beta line](line) [fifty-five times](passages)?
+
+- intent: finding_someone
+  examples: |
+    - Hi. I have lost my [dad]{"entity": "gender", "value": "male"}, can you help me find [him]{"entity": "gender", "value": "male"}?
+    - I have lost my [mum]{"entity": "gender", "value": "female"}, can you see [her]{"entity": "gender", "value": "female"}?
+    - Can you assist me in locating my friend? I seem to have lost track of [him]{"entity": "gender", "value": "male"}.
+    - I'm trying to find my [sister]{"entity": "gender", "value": "female"}. Have you seen [her]{"entity": "gender", "value": "female"} around?
+    - My [brother]{"entity": "gender", "value": "male"} is missing. Can you help me locate [him]{"entity": "gender", "value": "male"}, please?
+    - I've lost my [daughter]{"entity": "gender", "value": "female"}. Can you check if [she]{"entity": "gender", "value": "female"}'s nearby?
+    - I need help finding my [son]{"entity": "gender", "value": "male"}. Have you spotted [him]{"entity": "gender", "value": "male"} recently?
+    - Can you assist me in locating a colleague? I can't seem to find [him]{"entity": "gender", "value": "male"}.
+    - I've misplaced my best friend. Could you help me find where [he]{"entity": "gender", "value": "male"}'s?
+    - I can't find my [aunt]{"entity": "gender", "value": "female"}. Can you check if [she]{"entity": "gender", "value": "female"}'s in the vicinity?
+    - Hiii. I've lost my [father]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} was wearing a [beret]{"entity": "clothing", "value": "hat"} when i lost [him]{"entity": "gender", "value": "male"}.
+    - Hello there, I'm looking for my [daughter]{"entity": "gender", "value": "female"}. [She]{"entity": "gender", "value": "female"} was wearing [beanie]{"entity": "clothing", "value": "hat"} and a [rucksack]{"entity": "clothing", "value": "bag"} when I lost [her]{"entity": "gender", "value": "female"}.
+    - Could you help me locate my [mother]{"entity": "gender", "value": "female"}? [She]{"entity": "gender", "value": "female"} [wasn't](negation) wearing a [cap]{"entity": "clothing", "value": "hat"} when I lost [her]{"entity": "gender", "value": "female"} in the crowd.
+    - I'm trying to find my [grandma]{"entity": "gender", "value": "female"}. [She]{"entity": "gender", "value": "female"} [wasn't](negation) wearing [neither](negation) a [rucksack]{"entity": "clothing", "value": "bag"} [nor](negation) a [purse]{"entity": "clothing", "value": "bag"} when I lost [her]{"entity": "gender", "value": "female"}.
+    - Hi Pepper. I lost my child. [He]{"entity": "gender", "value": "male"} is a [boy]{"entity": "gender", "value": "male"} with the [snapback]{"entity": "clothing", "value": "hat"}.
+    - I lost my [uncle]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} is wearing [fedora]{"entity": "clothing", "value": "hat"} but [not](negation) [handbag]{"entity": "clothing", "value": "bag"}.
+    - Could u help me to find my [mama]{"entity": "gender", "value": "female"}?
+    - I lost my [boyfriend]{"entity": "gender", "value": "male"}. Have you seen [him]{"entity": "gender", "value": "male"} around?
+    - I lost my [girlfriend]{"entity": "gender", "value": "female"}. [She]{"entity": "gender", "value": "female"} is wearing a beautiful [hat](clothing).
+    - Could you help me to find my cousin? I lost [him]{"entity": "gender", "value": "male"}.
+    - Hii my friend. I've lost my best friend. [She]{"entity": "gender", "value": "female"} was carrying a [bag](clothing) but [not](negation) wearing a [visor]{"entity": "clothing", "value": "hat"}.
+    - I can no longer find my [mama]{"entity": "gender", "value": "female"}. [She]{"entity": "gender", "value": "female"} is wearing [not](negation) a [beanie]{"entity": "clothing", "value": "hat"} but [she]{"entity": "gender", "value": "female"}'s carrying a fashionable [purse]{"entity": "clothing", "value": "bag"}.
+    - I lost my [son]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} is wearing a beautiful [hat](clothing).
+    - i've lost my [son]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} is wearing a [hat](clothing).
+    - i've lost my [father]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} is carrying on [handbag]{"entity": "clothing", "value": "bag"}.
+    - i've lost my [son]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} is transporting a [briefcase]{"entity": "clothing", "value": "bag"} but [he]{"entity": "gender", "value": "male"} [isn't](negation) donning a [trilby]{"entity": "clothing", "value": "hat"}.
+    - i've lost my [father]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} is wearing a classic [cap]{"entity": "clothing", "value": "hat"} and carrying a fancy [handbag]{"entity": "clothing", "value": "bag"}.
+    - I can no longer find my cousin. [She]{"entity": "gender", "value": "female"} is putting on a luxurious [headpiece]{"entity": "clothing", "value": "hat"}.
+    - i've lost my [sister]{"entity": "gender", "value": "female"}. Could u help me to find [her]{"entity": "gender", "value": "female"}?
+    - i've lost my [son]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} is wearing a fancy [beret]{"entity": "clothing", "value": "hat"}.
+    - Can you track down my friend?
+    - I lost my children? [He]{"entity": "gender", "value": "male"} is a [boy]{"entity": "gender", "value": "male"} with a colorful [knapsack]{"entity": "clothing", "value": "bag"} and the [hat](clothing).
+    - I can no longer find my [papa]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} [doesn't](negation) wear a [hat](clothing) but carries a cute [handbag]{"entity": "clothing", "value": "bag"}.
+    - Hello, I'm searching for my [sister]{"entity": "gender", "value": "female"}. [She]{"entity": "gender", "value": "female"} was last seen wearing a [hat](clothing) and [no](negation) [purse]{"entity": "clothing", "value": "bag"}.
+    - Have you seen my [bro]{"entity": "gender", "value": "male"}? [He]{"entity": "gender", "value": "male"} is carrying a vintage [rucksack]{"entity": "clothing", "value": "bag"} and a stylish [cap]{"entity": "clothing", "value": "hat"}.
+    - I'm looking for my [grandfather]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} is in a [hat](clothing) and [doesn't](negation) have a [backpack]{"entity": "clothing", "value": "bag"}.
+    - Can you help me find my [aunt]{"entity": "gender", "value": "female"}? [She]{"entity": "gender", "value": "female"} is holding a casual [purse]{"entity": "clothing", "value": "bag"} but [no](negation) [hat](clothing).
+    - I'm searching for my [nephew]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} has on a [visor]{"entity": "clothing", "value": "hat"}.
+    - Please, I need help finding my [daughter]{"entity": "gender", "value": "female"}. [She]{"entity": "gender", "value": "female"} is [not](negation) wearing a [purse]{"entity": "clothing", "value": "bag"}.
+    - My [grandmother]{"entity": "gender", "value": "female"} is missing. [She]{"entity": "gender", "value": "female"} was last seen wearing a [hat](clothing).
+    - I've lost track of my [uncle]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} is wearing a sporty [hat](clothing) but [he]{"entity": "gender", "value": "male"} [doesn't](negation) wear a [bag](clothing).
+    - Can anyone assist in finding my cousin? [She]{"entity": "gender", "value": "female"} is dressed in a [beret]{"entity": "clothing", "value": "hat"}.
+    - I'm looking for my [daddy]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} is in a [visor]{"entity": "clothing", "value": "hat"} and carries a [handbag]{"entity": "clothing", "value": "bag"}.
+    - Excuse me, have you seen my [brother]{"entity": "gender", "value": "male"}? [He]{"entity": "gender", "value": "male"} is lifting a [backpack]{"entity": "clothing", "value": "bag"} and [he]{"entity": "gender", "value": "male"} [doesn't](negation) have a [beanie]{"entity": "clothing", "value": "hat"}.
+    - I'm searching for my [aunt]{"entity": "gender", "value": "female"}. [She]{"entity": "gender", "value": "female"} is dressed in a snazzy [cap]{"entity": "clothing", "value": "hat"} and [isn't](negation) carrying a [knapsack]{"entity": "clothing", "value": "bag"}.
+    - Can you help me find my [grandpa]{"entity": "gender", "value": "male"}? [He]{"entity": "gender", "value": "male"} is conveying [shoulder bag]{"entity": "clothing", "value": "bag"} and [he]{"entity": "gender", "value": "male"} [doesn't](negation) wear a [fedora]{"entity": "clothing", "value": "hat"}.
+    - Please help me locate my [niece]{"entity": "gender", "value": "female"}. [She]{"entity": "gender", "value": "female"} [isn't](negation) donning a [trilby]{"entity": "clothing", "value": "hat"}.
+    - I've lost my cousin. [He]{"entity": "gender", "value": "male"} is wearing elegant [hat](clothing) and [he]{"entity": "gender", "value": "male"} [doesn't](negation) have a [backpack]{"entity": "clothing", "value": "bag"}.
+    - My friend is missing. [She]{"entity": "gender", "value": "female"} was last seen in a [cap]{"entity": "clothing", "value": "hat"} and [doesn't](negation) carry a [satchel]{"entity": "clothing", "value": "bag"}.
+    - I can't find my [uncle]{"entity": "gender", "value": "male"}. [He]{"entity": "gender", "value": "male"} [isn't](negation) wearing a [beanie]{"entity": "clothing", "value": "hat"}.
+    - Have you seen my [sister]{"entity": "gender", "value": "female"}? [She]{"entity": "gender", "value": "female"} has a [hat](clothing) on.
+    - I'm looking for my [grandma]{"entity": "gender", "value": "female"}. [She]{"entity": "gender", "value": "female"} has on a classic [trilby]{"entity": "clothing", "value": "hat"} and [isn't](negation) carrying a [purse]{"entity": "clothing", "value": "bag"}.
+    - Please, can you help find my [nephew]{"entity": "gender", "value": "male"}? [He]{"entity": "gender", "value": "male"} is dressed in a sporty [hat](clothing) and [he]{"entity": "gender", "value": "male"} [doesn't](negation) transportign a [bag](clothing).
+    - I've lost my friend. The person who i'am looking for is wearing a [hat](clothing) but [not](negation) a [rucksack]{"entity": "clothing", "value": "bag"}.
+    - Hello Pepper, I'm trying to find my [brother]{"entity": "gender", "value": "male"}, [no](negation) [hat](clothing) [no](negation) [bag](clothing).
+    - Hey Pepper, I am trying to look for my [father]{"entity": "gender", "value": "male"},  has [neither](negation) a [cap]{"entity": "clothing", "value": "hat"} [nor](negation) a [handbag]{"entity": "clothing", "value": "bag"}.
+    - I'm desperate, I'm trying to look for my cousin. [She]{"entity": "gender", "value": "female"} she was wearing a fashionable [beanie]{"entity": "clothing", "value": "hat"} but she didn't have a [bag](clothing).
+
+- intent: inform
+  examples: |
+    - Now I remember. [He]{"entity": "gender", "value": "male"} is wearing a [trilby]{"entity": "clothing", "value": "hat"}.
+    - Sorry, I made a mistake. [She]{"entity": "gender", "value": "female"} is [not](negation) wearing a [hat](clothing).
+    - You misunderstood. [She]{"entity": "gender", "value": "female"} is wearing a (beret){"entity": "clothing", "value": "hat"}.
+    - Sorry, I made a mistake. The person you are looking for is carrying a [handbag]{"entity": "clothing", "value": "bag"}.
+    - Now I remember. [He]{"entity": "gender", "value": "male"} is probably holding a colorful [bag](clothing).
+    - Now I remember. [She]{"entity": "gender", "value": "female"} is transporting a [rucksack]{"entity": "clothing", "value": "bag"}.
+    - Sorry, I made a mistake. [He]{"entity": "gender", "value": "male"} is donning [fedora]{"entity": "clothing", "value": "hat"}.
+    - [he]{"entity": "gender", "value": "male"} is wearing a fancy [cap]{"entity": "clothing", "value": "hat"}
+    - you misunderstood. [He]{"entity": "gender", "value": "male"} is [not](negation) carrying a [bag](clothing).
+    - [male](gender)
+    - [not](negation) [male](gender)
+    - [female](gender)
+    - [no](negation) [female](gender)
+    - [hat](clothing)
+    - [bag](clothing)
+    - [no](negation) [hat](clothing)
+    - My mistake. [He]{"entity": "gender", "value": "male"} is [not](negation) wearing a [hat](clothing) and [he]{"entity": "gender", "value": "male"} is carrying a [knapsack]{"entity": "clothing", "value": "bag"}.
+    - [She]{"entity": "gender", "value": "female"} is adorning a [beret]{"entity": "clothing", "value": "hat"}.
+    - [He]{"entity": "gender", "value": "male"} is carryin a [shoulder bag]{"entity": "clothing", "value": "bag"}.
+    - [She]{"entity": "gender", "value": "female"} is wearing a [hat]{"entity": "clothing", "value": "hat"}.
+    - [She]{"entity": "gender", "value": "female"} wears a [cap]{"entity": "clothing", "value": "hat"} but [doesn't](negation) carry a [bag](clothing).
+    - I said that badly. [She]{"entity": "gender", "value": "female"} is wearing [hat](clothing).
+    - I wanto to modify, [He]{"entity": "gender", "value": "male"} [hasn't](negation) a [hat](clothing)
+    - modify
+    - No, I want to change, I made a mistake. [She]{"entity": "gender", "value": "female"} [isn't](negation) transporting a [rucksack]{"entity": "clothing", "value": "bag"}.
+    - change
+
+- intent: count_groups
+  examples: |
+    - How many groups are in the contest?
+    - Tell me the number of groups that participated in the Artificial Vision contest.
+    - I would like to know how many groups were present at this year's contest.
+    - How many groups participated at the torunament of artficial vision?
+    - I would like to know the number of teams that took part in the Artificial Vision tournament.
+    - What is the number of teams that competed at the Artificial Vision event.
+    - could you tell me the number of groups attending the challenge?
+    - What is the total number of groups in the contest?
+    - Can you tell me how many groups participated in the Artificial Vision contest?
+    - I’d like to find out how many groups attended this year’s competiton.
+    - How many teams took part in the vision competition?
+    - I want to know the total number of teams that joined the Artificial Vision tournament.
+    - How many teams competed in the Artificial Vision event?
+    - Could you provide the number of groups that participated in the challenge?
+    - What’s the total count of groups in the contest?
+    - Can you provide the number of groups that participated in the Artificial Vision challenge?
+    - How many teams were present in this edition of the contest?
+    - What is the total number of participating groups in the vision contest?
+    - Could you tell me how many teams joined the Artificial Vision competition?
+    - How many groups took part in the tournament this year?
+    - Do you know the number of teams that were involved in the event?
+    - How many groups achieved at least [zero point one](mark) point?
+    - How many teams [failed](negation) to score [zero point six five](mark)?
+    - How many teams managed to obtain a rating of [zero point four five zero](mark)?
+    - Can you tell me how many teams scored [less](negation) than [0.07](mark) points?
+    - and how many have done [less](negation) than [zero point five zero zero](mark)?
+    - how many groups scored [less](negation) than [zero point zero eight zero](mark) points? 
+    - And how many of them achieved a score of [zero point zero zero nine](mark)?
+    - And how many teams reached a performance of [zero point three zero zero](mark)?
+    - How many groups scored at least [zero point five zero](mark) points?
+    - How many teams did [not](negation) score at least [0.5](mark)?
+    - How many teams reached a rating of [0.850](mark)?
+    - Tell me how many teams [didn't](negation) score at least [1](mark) point.
+    - and how many of thems have scored [0.90](mark) points?
+    - and how many did a performance of [0.002](mark)?
+    - How many groups obtained a score of at least [zero point two](mark)?
+    - Could you tell me the number of teams that reached at least [zero point three five](mark)?
+    - How many teams managed to score [zero point two five zero](mark) or more?
+    - Can you tell me how many groups did [not](negation) [zero point three five five](mark) points?
+    - How many teams [failed](negation) to achieve a score of [0.75](mark)?
+    - How many groups earned [zero point zero zero nine](mark) points?
+    - What’s the number of teams that scored [zero point six five](mark)?
+    - And how many of those teams reached a score of [zero point nine five](mark)?
+    - Can you tell me how many teams performed at a level of [zero point seven](mark) points?
+    - How many teams did not manage to score at least [2](mark) points?
+    - how many groups have a [maximum](negation) score of [0.4](mark)?
+    - how many groups have done a minimun score of [0.4](mark)?
+    - how many groups have a minimun score of [0.4](mark)?
+
+- intent: classification
+  examples: |
+    - Who did [win]{"entity": "position", "value": "1st"} the competition?
+    - who did the [second](position) place?
+    - who is the [winner]{"entity": "position", "value": "1st"} of the competition?
+    - Who finished in the [9th](position) spot?
+    - who is the [leader]{"entity": "position", "value": "1st"} of the competition?
+    - I’d like to find out who placed [sixth](position) in the rankings.
+    - do you know who occupied the [final]{"entity": "position", "value": "14th"} position in the competition?
+    - and who classified [thirty 1st](position)?
+    - and who made it to the [thirteenth](position) position?
+    - and who finished at the [bottom]{"entity": "position", "value": "14th"}?
+    - and who ranked [4th](position)?
+    - Who [won]{"entity": "position", "value": "1st"} the contest?
+    - Who secured the [fifteenth](position) position in the contest?
+    - Who took [eighteenth](position) place?
+    - Who came in [ninth](position) in the rankings?
+    - I’d like to know who ranked [twenty fifth](position) in the standings.
+    - Do you know who ended up in the [last]{"entity": "position", "value": "14th"} position of the competition?
+    - Who took the [14th](position) spot in the tournament?
+    - Who was classified in [thirty second](position) place?
+    - Who secured the [thirteenth](position) position?
+    - Who placed at the [first]{"entity": "position", "value": "1st"} of the rankings?
+    - Can you tell me who ranked [fourth](position) in the contest?
+    - And who came in [twenty seventh](position)?
+    - Who was ranked [thirteenth](position)?
+    - What about the [seventh](position) place finisher?
+    - And who took the [final]{"entity": "position", "value": "14th"} position?
+    - Can you tell me who placed [third](position)?
+    - And who secured the [6th](position) spot?
+    - Who ended up at the [bottom]{"entity": "position", "value": "14th"}?
+    - And who was in [twenty third](position).
+    - Who was classified in [thirty fifth](position)?
+    - Can you tell me who occupied the [last]{"entity": "position", "value": "14th"} place?
+    - In what position did [Samuel Prugno Siniscalchi](member_group) rank?
+    - telle me the position of [alfonso emanuele nicolò](member_group) in the competition.
+    - I want to know where [De Angelis Christian Salvatore](member_group) placed in the competition.
+    - Do you know what position [dobrev viktor yanchev](member_group) reached?
+    - do you know what is the position of [Sessa Antonio](member_group)?
+    - What was the ranking of [siniscalchi prugno samuel](member_group) in the competition?
+    - What was the psotion of [rugno siniscalchi samuel](member_group) in the competition?
+    - Can you tell me the placement of [nicolò alfonso emanuele](member_group) in the contest?
+    - Could you tell me the placement of [nicolò emanuele alfonso](member_group) in the tournamnet?
+    - I’d like to know the final position of [Christian Salvatore De Angelis](member_group) in the competition.
+    - I’d like to know the final ranking position of [salvatore christian de angelis](member_group) in the artificial vision contest.
+    - Do you have information on the rank achieved by [yanchev dobrev viktor](member_group)?
+    - i want to know the rank achieved by [yanchev viktor dobrev](member_group)?
+    - Can you tell me where [antonio sessa](member_group) finished in the competition?
+    - At what position did group [ten](group_ID) finish?
+    - Let me know where group [1](group_ID) was ranked in the competition.
+    - Which rank did group [fourteen](group_ID) obtain?
+    - What is the final ranking of group [four](group_ID)?
+    - I’d like to know where group 10](group_ID) placed in the competition.
+    - do you have any information on what position group [eight](group_ID) reached?
+    - what position has been reached by group [10](group_ID)?
+    - Do you know at what position group [nine](group_ID) finished?
+    - and in what position [Giovanni Lamb](member_group) arrived in the competition?
+    - and what is the position of [Egidio Zottarelli](member_group) arrived in the competition?
+    - and in what place group [eleven](group_ID) arrived?
+    - what about the position of group [six](group_ID)?
+    - what about the place of [lamb giovanni](member_group) in the contest?
+    - and in what position he arrived in the competition?
+    - and in what position she arrived in the contets?
+    - and in what position they arrived?
+    - and what is the place he ranked? 
+    - and what is the place she ranked?
+    - Did group [one](group_ID) [win]{"entity": "position", "value": "1st"} the competition?
+    - Tell me if group [2](group_ID) have arrived [second](group_ID) in the contest.
+    - I would like to know if [Zottarelli Egidio](member_group) reached the [3rd](position) place in the artifica vision contest.
+    - could you tell me if group [Lamb Giovanni](member_group) achieved the [4th](position) position?
+    - Did group [10](group_ID) secure the [second](position) place in the competition?
+    - Can you confirm whether group [eleven](group_ID) finished in [10th](position) position in the contest?
+    - I want to find out if [Oralndo Palma](member_group) managed to obtain the [fourth](position) rank in the Artifica Vision contest.
+    - Would you be able to tell me if [Saturnino Fabrizio](member_group) successfully attained the [6th](position) spot?
+    - Has group [14](group_ID) emerged as the [winner]{"entity": "position", "value": "1st"} in the competition?
+    - Please let me know if group [nine](group_ID) secured [21st](position) place in the contest.
+    - I am curious whether [Fabrizio Sturnino](member_group) placed [3rd](position) in the Artifica Vision competition.
+    - Can you verify if [Sessa Antonio](member_group) earned the [8th](position) ranking?
+    - tell me the position with a score of [0.8](mark).
+    - tell me the position with a score [less](negation) tha [zero point seven](mark)
+    - tell me the position with a minimun of [0.8](mark).
+        
+- intent: have_partecipated
+  examples: |
+    - did [moraru maximilian marius](member_group) partecipate in the contest ?
+    - did [Micera Valentina](member_group) take part in the contest?
+    - do you know if [carmen valentina schirò](member_group) took part in the artificial vision competition?
+    - telle me if [del gaudio nunzio]](member_group) competed  in the tournament.
+    - i would like to know if [oltean bianca](member_group) did join in the contest of artificial vision.
+    - i want to know whether [fabrizio saturnino](member_group) is in the competition.
+    - [Orlando Palma](member_group) partcipated in the artificial vision event?
+    - I’m curious to know if [domenico nappo](member_group) is part of the contest.
+    - Let me know if [martano pietro](member_group) was a contestant in the tournament.
+    - Was [antonucci asja](member_group) involved in the artificial vision contest?
+    - [molinario angelo](member_group) is in the competitio of artificial vision?
+    - Did [palma orlando](member_group) participate in the competition?
+    - Do you know if [Setolino Ciro](member_group) was part of the artificial vision contest?
+    - Let me know if [Pietro Martano](member_group) took part in the tournament.
+    - Was [maximilian marius moraru](member_group) a participant in the contest?
+    - Did [valentina micera](member_group) join the competition?
+    - Can you confirm whether [schirò carmen valentina](member_group) participated in the artificial vision contest?
+    - do you confirm that [schirò valentina carmen](member_group) participated in the artificial vision contest?
+    - Let me know if [nunzio del gaudio](member_group) took part in the tournament.
+    - I’d like to find out if [bianca oltean](member_group) participated in the artificial vision contest.
+    - I want to check if [solimeno raffaele](member_group) is competing in the tournament.
+    - Was [Raffaele Solimeno](member_group) part of the artificial vision event?
+    - I’m interested in knowing if [nappo domenico](member_group) is competing in the contest.
+    - Could you tell me if [lamberti mattia](member_group) was among the contestants in the tournament?
+    - Did [asja antonucci](member_group) take part in the artificial vision contest?
+    - Is [angelo molinario](member_group) competing in the artificial vision tournament?
+    - Can you tell me whether [rescigno andrea](member_group) participated in the competition?
+    - Do you happen to know if [ciro setolino](member_group) was involved in the artificial vision contest?
+    - Can you confirm if [Raffaele Sbardella](member_group) was one of the tournament participants?
+    - I’d like to find out whether [andrea rescigno](member_group) participated in the artificial vision contest.
+    - I want to check if [marco martelli](member_group) is competing in the tournament.
+    - Did [Andrea Marino](member_group) take part in the artificial vision event?
+    - I’m curious to know whether [marius maximilian moraru](member_group) is involved in the artificial vision competition.
+    - Could you confirm if [martelli marco](member_group) was a participant in the tournament?
+    - Was [Viktor Yanchev Dobrev](member_group) a competitor in the artificial vision contest?
+    - Is [de angelis salvatore christian](member_group) participating in the artificial vision competition?
+    - Can you tell me if group [12](group_ID) joined the artificial vision contest?
+    - Did group [twelve](group_ID) compete in the contest?
+    - can you tell me if group [seventeen](group_ID) took part in the contest of artificial vision?
+    - was group [fifteen](group_ID) a contenstant of the contest?
+    - was group [5](group_ID) involved in the tournament?
+    - did group [twenty-one](group_ID) compete in the artificial vision event?
+    - do you know wheter group [thirty](group_ID) engaged in the challenge of artifical vision?
+    - and [sbardella raffaele](member_group) has partecipated?
+    - who partecipated in the contest?
+    - did [Moraru Maximilian Marius](member_group) and [De Angelis Salvatore Christian](member_group) partecipate in the contest ?
+    - did [Micera Valentina](member_group) and [Martelli Marco](member_group) take part in the contest?
+    - do you know if [carmen valentina schirò](member_group) and group [15](group_ID) took part in the artificial vision competition?
+    - telle me if group [13](group_ID) and [Del Gaudio Nunzio](member_group) competed  in the tournament.
+    - i would like to know if group [30](group_ID) and [Oltean Bianca](member_group) did join in the contest of artificial vision.
+    - i want to know whether [Andrea Rescigno](member_group) and [Ciro Setolino](member_group) is in the competition.
+    - [Orlando Palma](member_group) and group [1](group_ID) partcipated in the artificial vision event?
+    - Can you tell me if group [12](group_ID) and group [14](group_ID) joined the artificial vision contest?
+    - Did group [twelve](group_ID) and group [20](group_ID) compete in the contest?
+    - can you tell me if group [seventeen](group_ID) and group [1](group_ID) took part in the contest of artificial vision?
+    - was group [fifteen](group_ID) and group [2](group_ID) a contenstant of the contest?
+    - was group [5](group_ID) and [Esposito Paolo](member_group) involved in the tournament?
+    - did [Paolo Esposito](member_group) and [Attianese Carmine](member_group) compete in the artificial vision event?
+
+- intent: members_group
+  examples: |
+    - who are the members of group [five](group_ID)?
+    - tell me the representatives of group [seven](group_ID).
+    - i'd like to know the members of group [eight](group_ID).
+    - Who are the participants in group [nine](group_ID)?
+    - Can you tell me who is in group [one](group_ID)?
+    - List the representatives of group [eleven](group_ID).
+    - Can you provide the names of the members of group [nineteen](group_ID)?
+    - I want to know who is part of group [twenty-five](group_ID).
+    - Could you tell me the team members of group [29](group_ID)?
+    - could you telle me the names of the participants of the group [4](group_ID)
+    - i wnant to know ho are the temmates of [senese benito](member_group).
+    - I want to know who [Benito Senese](member_group)'s teammates are.
+    - Can you tell me who is in the same team as [paolo esposito](member_group)?
+    - I'd like to know the teammates of [esposito paolo](member_group).
+    - Who are the members of [Martino Michele](member_group)’s group?
+    - Can you provide the names of [attianese carmine](member_group)’s teammates?
+    - Who are the other members of [Romano Christian](member_group)’s team?
+    - Can you list the teammates of [carmine attianese](member_group)?
+    - Who else is in [christian romano](member_group)’s team?
+    - Can you tell me who [marino andrea](member_group) is grouped with?
+    - I’d like to find out who [Marmo Alberto](member_group)’s teammates are.
+    - Which people are in the same group as [pasquale alessandro](member_group?
+    - Who else is on the same team as [alberto marmo](member_group)?
+    - Could you list the teammates of [Carmine Aliberti](member_group)?
+    - Who else is on [aliberti carmine](member_group)’s team?
+    - I'd like to know who is in [Capaldo Vincenzo](member_group)’s group.
+    - Can you show me the team members of [volpe jacopo](member_group)?
+    - Who else is on the same team as [Jacopo Volpe](member_group)?
+    - Which members are part of [vincenzo capaldo](member_group)’s group?
+    - and the component of the group that [zappullo pietro](member_group) is part of?
+    - what about the component of the group that [Michele Martino](member_group) is a member of?
+    - and who are his temmates?
+    - and who are her temmates?
+    - who are the members of his group?
+    - who are the members of her group?
+    - who are the components of group [ten](group_ID)?
+    - and who are the components of the group?
+    - do you know the member of group [eleven](group_ID)?
+    - ad who are the components of the groups?
+    - and what are the names oh the temmates?
+    - who are the members of the group that [won]{"entity": "position", "value": "1st"} the contest?
+    - tell me the members that arrived [sixth](position).
+    - Who are the members of the group that did [lead]{"entity": "position", "value": "1st"} the contest?
+    - Can you tell me the team members of the group that take the [3rd](position) in the contest?
+    - Which participants were in the group that secured the [primary]{"entity": "position", "value": "1st"} place?
+    - List the members of the team that [lowest placed]{"entity": "position", "value": "14th"}.
+    - Who were the participants in the group that ranked [second](position)?
+    - Can you provide the names of the members who finished [10th](position)?
+    - what about the members of the group.
+    - could you tell me the other members?
+    - who are the other temmates?
+    - who are the members of group [five](group_ID) and [six](group_ID)?
+    - tell me the representatives of group [seven](group_ID) and [10](group_ID).
+    - i'd like to know the members of group [eight](group_ID) and [5](group_ID).
+    - Who are the participants in group [nine](group_ID) and [17](group_ID)?
+    - Can you tell me who is in group [one](group_ID) and group [2](group_ID)?
+    - List the representatives of group [eleven](group_ID) and group [11](group_ID).
+    - Can you provide the names of the members of group [nineteen](group_ID) and group [two](group_ID)?
+    - I want to know who is part of group [twenty-five](group_ID) and group [14](group_ID).
+    - Could you tell me the team members of group [29](group_ID) and group [7](group_ID)?
+    - could you telle me the names of the participants of the group [4](group_ID) and group [15](group_ID).
+    - and who are the members of these groups?
+    - can you tell me the members of the groups?
+    - how are the members
+    - who are the members of these groups?
+    - i wanna know the members
+    - And which members belong to these groups?
+    - Can you list the members of these groups?
+    - Who are the individuals in these groups?
+    - Could you tell me who the members of these groups are?
+    - I’d like to know the members of the groups.
+    - Let me know who the members are.
+    - Can you tell me the members who reached a score of [0.555](mark)?
+    - Wich are the members who have done a rating of [zero point zero eight](mark)?
+    - tell me the member who did [0.2](mark) points.
+    - what are the members who did [0.45](mark) points?
+    - Can you list the members who obtained a score of [0.008](mark)?
+    - Which members achieved a rating of [0.33](mark)?
+    - Let me know which member received [0.044](mark) points.
+    - Could you tell me the members who scored [zero point six](mark) points?
+    - Which members recorded a rating of [zero point two two](mark)?
+    - wich members did a minimun of [0.28](mark) points?
+    - tell me the members that have scored minimun [0.5].
+
+
+- intent: score_done
+  examples: |
+    - what is the score of group [twelve](group_ID)?
+    - tell me the points of group [thirteen](group_ID)?
+    - i want to know the score of group [14](group_ID).
+    - could you tell me the score done by the group [fifteen](group_ID) in the artificial contest.
+    - i would like to knnow the points of [magliulo marco](member_group) and his team in the competition.
+    - I’d like to know the score of [marco magliulo](member_group) and his team in the competition.
+    - Can you tell me the points earned by [Ranauro Massimiliano](member_group) and his team in the contest?
+    - I want to find out how many points [massimiliano ranauro](member_group) his team scored in the tournament.
+    - Could you provide the score achieved by [ferraioli chiara](member_group) and his team in the competition?
+    - Tell me the total points of [Chiara Ferraioli](member_group) and his team in the event.
+    - What was the final score of [giovanni ommeniello](member_group) and his team in the contest?
+    - do you know the score reached by [alessandro pasquale](member_group)?
+    - can you tell me the total made by group [16](group_ID).
+    - what's the score done by group [sixteen](group_ID)?
+    - I’d like to find out the score of group [twenty-six](group_ID).
+    - what score is been done by [ommeniello giovanni](member_group) and his group?
+    - Can you provide the points done by [Davide Tramice](member_group)?
+    - Could you share the score achieved by [marotta giuseppe](member_group) in the artificial contest?
+    - I want to know how many points [memoli luca](member_group) and his team have pbtained in the competition.
+    - Could you give me the points for [tramice davide](member_group)?
+    - Can you provide the points scored by [Giuseppe Marotta](member_group) in the artificial contest?
+    - I want to find out how many points [luca memoli](member_group) and his team have earned in the competition.
+    - Could you tell me the total score done by group [16](group_ID)?
+    - What is the score obtained by [Pasquale Petti](member_group)?
+    - How many points has [petti pasquale](member_group) and his team secured?
+    - and what is his score?
+    - and what is her score?
+    - and what is their score?
+    - what is the score of the group?
+    - and what points they reached?
+    - what about the score.
+    - with wich socre?
+    - And how many points does she have?
+    - And what are their points?
+    - What’s the group's score?
+    - And how many points did they achieve?
+    - What about their total score?
+    - With what score?
+    - do you know the score of the group classified in [2nd](position)?
+    - what the score of the [last]{"entity": "position", "value": "14th"} position?
+    - and what is the score done in [1st](position)?
+    - with wich points classified the [first](position) place in the torunament of artificial vision?
+    - tell me the score of the [ninth](position) classified in the artificial vision contest.
+    - Do you happen to know the score of the group that finished in [eleventh](position)?
+    - What is the score of the team in the [thirty third](position) position?
+    - With how many points did the [1st](position) place qualify in the competition?
+    - Can you tell me the score of the group that ranked [second](position) in the artificial vision contest?
+    - what is the score of group [twelve](group_ID) and group [16](group_ID)?
+    - tell me the points of group [thirteen](group_ID) and group [17](group_ID)?
+    - i want to know the score of group [14](group_ID) and group [three](group_ID).
+    - Can you provide the points done by [pietro zappullo](member_group) and [Cardamone Agostino](member_group)?
+    - Could you share the score achieved by [valentino miriam](member_group) and [russomando antonio](member_group) in the artificial contest?
+    - Could you give me the points for [Zaza Vincent](member_group) and [Martano Pieto](member_group)?
+    - Can you provide the points scored by [andrea aliberti](member_group) and [parolise gaetano](member_group) in the artificial contest?
+    - do you know the score of the groups classified in [2nd](position) and [3rd](position) place?
+    - with wich points classified the [first](position) and [4th](position) place in the torunament of artificial vision?
+    - tell me the score of the [ninth](position) and [10th](position) classified in the artificial vision contest.
+    - Do you happen to know the score of the group that finished in [eleventh](position) and [6th](position) position?
+    - What is the score of the teams in the [thirty third](position) and [11th](position) position?
+
+- intent: group_id
+  examples: |
+    - what is the group that [Oltean Miruna](member_group) is a member of?
+    - can you tell me the group id that [Lebourg Quentin](member_group) is part of?
+    - i would like to know what is the number of group of [engel alexandre](member_group).
+    - Which group is [iruna oltean](member_group) a member of?
+    - Can you tell me the group [quentin lebourg] belongs to?
+    - What is the group that [alexandre engel](member_group) is in?
+    - Can you provide the group ID that [vincent zaza](member_group) belongs to?
+    - What is the group ID of [oltean bianca](member_group)?
+    - Could you tell me the ID of the group that [Gaetano Parolise](member_group) is part of?
+    - tell me the group number of [pietro zappullo](member_group)
+    - what is the number of the group of [Zaza Vincent](member_group)?
+    - what is the ID group of [parolise gaetano](member_group)?
+    - Can you provide the group ID that [bianca oltean](member_group) is in?
+    - Which group does [miriam valentino](member_group) belong to?
+    - I’d like to know the group number for [casella giovanni](member_group).
+    - Give me the group number of [aliberti andrea](member_group).
+    - What is the group number for [Cardamone Agostino](member_group)?
+    - What group is [valentino miriam](member_group) a part of?
+    - Can you tell me which group [Giovanni Casella](member_group) is in?
+    - To which group does [andrea aliberti](member_group) belong?
+    - I want to know the group number of [agostino cardamone](member_group).
+    - What is the ID of the group that [Antonio Russomando](member_group) is in?
+    - do you know what [russomando antonio](member_group)'s id group is?
+    - telle me what [Zottarelli Egidio](member_group)'s number group is.
+    - i wanna know what is the number of the group of [Saturnino Fabrizio](member_group).
+    - and what is his group number?
+    - and what is her group number?
+    - and what is her the number of his group?
+    - and what is her the number of the group?
+    - and what is their group id?
+    - what is the ID of the group?
+    - can you tell me the group ID?
+    - and what are the IDs
+    - and can you tell me the group ID
+    - tell me the ID of the groups
+    - and what is the number of the group?
+    - and what is the id of their group?
+    - what is the group ID?
+    - could you tell me the the group id.
+    - what about the group ID?
+    - i wanna know the id group?
+    - and can you tell me the number of the group?
+    - what is the ID of the group in [1st](position) position?
+    - what group [won]{"entity": "position", "value": "1st"} the contest?
+    - and what group arrived in the [last]{"entity": "position", "value": "14th"} position?
+    - what is the group that classified [eleventh](position)?
+    - tell me the group that ranked [14th]{"entity": "position", "value": "14th"}
+    - tell me the number of group that classified [thirteenth](position)
+    - I would like to know the group that achieved the [top](position) position
+    - Which group reached the [ninth](position) place?
+    - I wanna know which group was ranked [twelfth](position).
+    - I’d like to find out which group finished in [eighth](position) position.
+    - I’d like to know which group claimed the [top]{"entity": "position", "value": "1st"} position.
+    - Which group occupied the [tenth](position) place in the standings.
+    - Which team grabbed the [21st](position) position?
+    - I’d appreciate knowing which group placed [twelfth](position) in the competition.
+    - Which team made it to [third](position)?
+    - do you know which group came in [seventh](position) in the competition?
+    - do you know which group finished in [last]{"entity": "position", "value": "14th"} position?
+    - Can you tell me which team placed [2nd](position).
+    - Can you tell me which team ranked [twelfth](position)?
+    - what is the group that [Oltean Miruna](member_group) and [pasquale alessandro](member_group) are a member of?
+    - can you tell me the group id that [Lebourg Quentin](member_group) and [Pietro Zappullo](member_group) are part of?
+    - i would like to know what is the number of group of [engel alexandre](member_group) and [Prugno Siniscalchi Samuel](member_group).
+    - Which group are [iruna oltean](member_group) and [Solimeno Raffaele](member_group) a member of?
+    - Can you tell me the group [quentin lebourg] and [Memoli Luca](member_group) belongs to?
+    - Can you tell me which team placed [2nd](position) and wich team placed [3rd](position)?
+    - Can you tell me which team ranked [twelfth](position) and wich [10th](position)?
+    - and which are these groups?
+    - which groups did these scores?
+    - can you tell me the number of the groups?
+    - and can you tell me the group id?
+    - And what are the names of these groups?
+    - Which groups are these?
+    - Which teams do these scores belong to?
+    - Which groups achieved these scores? 
+    - and which are.
+    - What are these groups?
+    - Which groups obtained these scores?
+    - Who are the groups that received these scores?
+    - Could you share the group ID?
+    - What is the identification number of the group?
+    - Can you tell me which groups these scores belong to?
+    - Which groups have these results?
+    - Which groups managed to achieve these scores?
+    - Who are the groups that reached these scores?
+    - And which ones are they?
+    - Can you tell me the groups that reached a score of [0.8](mark)
+    - Wich are the groups that have done a rating of [zero point two](mark)
+    - tell me the groups that did [0.7](mark) points
+    - Can you list the groups that obtained a score of [0.17](mark)?
+    - Which groups achieved a rating of [zerp point one](mark)?
+    - Let me know which groups received [0.9](mark) points.
+    - Could you tell me the groups that scored [1](mark)?
+    - Which groups recorded a rating of [one](mark)?
+    - Tell me which groups reached [0](mark) points.
+    - Can you provide the names of the groups that earned a score of [0](mark)?
+    - wich group did a minimun of [0.28](mark) points?
+    - tell me the group that have scored minimun [0.5].
+
+- intent: nlu_fallback
+  examples: |
+    - How are you?
+    - Do you know where is the supermarket?
+    - Do you know where is the bar?
+    - How is the weather?
+    - What time is it?
+    - What is the closing time of the supermarket?
+    - Can you tell me what is the capital of Italy?
+    - Do you know if there are restaurant in the shopping mall?
+    - how many animals are currently in the shopping mall?
+    - can u tell me if there is a game store in this shopping mall?
+    - how many cats are there?
+    - how many dogs are there?
+    - I lost my dog, can you help me?
+    - Do you know where I can buy a new shirt?
+    - Tell me how much an average pair of shoes costs.
+    - I would like to know how many stores are inside the shopping mall
+    - How do i look?
+    - Where can I eat in this shopping mall?
+    - Name a good store in this supermarket to spend time on.
+
+
+- synonym: male
+  examples: |
+    - boyfriend
+    - boys
+    - brother
+    - brothers
+    - dad
+    - dads
+    - dude
+    - dudes
+    - father
+    - fathers
+    - gentleman
+    - gentlemen
+    - grandfather
+    - grandfathers
+    - grandsons
+    - guy
+    - guys
+    - he
+    - him
+    - husband
+    - husbands
+    - male
+    - males
+    - man
+    - men
+    - nephew
+    - nephews
+    - papa
+    - papas
+    - sir
+    - sirs
+    - son
+    - sons
+    - uncle
+    - uncles
+
+- synonym: female
+  examples: |
+    - aunt
+    - auntie
+    - daughter
+    - female
+    - females
+    - gal
+    - gals
+    - gal
+    - girlfriend
+    - girlfriends
+    - girl
+    - girls
+    - grandma
+    - granddaughters
+    - grandmas
+    - her
+    - ladies
+    - lady
+    - mama
+    - mom
+    - moms
+    - mother
+    - mothers
+    - miss
+    - niece
+    - she
+    - sister
+    - sisters
+    - wife
+    - woman
+    - women
+
+- synonym: hat
+  examples: |
+    - beanie
+    - beret
+    - cap
+    - caps
+    - fedora
+    - hat
+    - hats
+    - head covering
+    - headpiece
+    - headwear
+    - snapback
+    - trilby
+    - visor
+
+- synonym: bag
+  examples: |
+    - backpack
+    - bag
+    - bags
+    - briefcase
+    - handbag
+    - knapsack
+    - purse
+    - rucksack
+    - shoulder bag
+
+- synonym: 1st
+  examples: |
+    - winner
+    - won
+    - win
+    - top
+    - lead
+    - victor
+    - champion
+    - leader
+    - primary
+    - one
+    - first
+
+- synonym: 2nd
+  examples: |
+    - second
+    - two
+    - 2st
+    - 2rd
+
+- synonym: 3rd
+  examples: |
+    - third
+    - three
+    - 3st
+    - 3nd
+
+- synonym: 4th
+  examples: |
+    - fourth
+    - four
+  
+- synonym: 5th
+  examples: |
+    - fifth
+    - five
+
+- synonym: 6th
+  examples: |
+    - sixth
+    - six
+
+- synonym: 7th
+  examples: |
+    - seventh
+    - seven
+
+- synonym: 8th
+  examples: |
+    - eighth
+    - eight
+
+- synonym: 9th
+  examples: |
+    - ninth
+    - nine
+
+- synonym: 10th
+  examples: |
+    - tenth
+    - ten
+
+- synonym: 11th
+  examples: |
+    - eleventh
+    - eleven
+
+- synonym: 12th
+  examples: |
+    - twelfth
+    - twelve
+
+- synonym: 13th
+  examples: |
+    - thirteenth
+    - thirteen
+
+- synonym: 14th
+  examples: |
+    - fourteenth
+    - fourteen
+    - last
+    - bottom ranked
+    - lowest placed
+    - final
+    - bottom
+
+- synonym: 15th
+  examples: |
+    - fifteenth
+    - fifteen
+
+- synonym: 16th
+  examples: |
+    - sixteenth
+    - sixteen
+
+- synonym: 17th
+  examples: |
+    - seventeenth
+    - seventeen
+
+- synonym: 18th
+  examples: |
+    - eighteenth
+    - eighteen
+  
+  
+- synonym: alpha line
+  examples: |
+    - line 1
+    - line1
+    - line-one
+    - lineone
+    - line alpha
+    - linealpha
+    - alphaline
+    - a line
+
+- synonym: beta line
+  examples: |
+    - line 2
+    - line2
+    - linetwo
+    - line-two
+    - line beta
+    - linebeta
+    - betaline
+    - b line
+
+- synonym: gamma line
+  examples: |
+    - line 3
+    - line3
+    - linethree
+    - line-three
+    - line gamma
+    - linegamma
+    - gammaline
+    - g line
+
+- synonym: delta line
+  examples: |
+    - line 4
+    - line4
+    - linefour
+    - line-four
+    - line delta
+    - linedelta
+    - deltaline
+    - d line

@@ -1,0 +1,269 @@
+version: "3.1"
+nlu:
+  - synonym: male
+    examples: |
+      - boyfriend
+      - boys
+      - brother
+      - brothers
+      - dad
+      - dads
+      - dude
+      - dudes
+      - father
+      - fathers
+      - gentleman
+      - gentlemen
+      - grandfather
+      - grandfathers
+      - grandsons
+      - guy
+      - guys
+      - he
+      - him
+      - husband
+      - husbands
+      - male
+      - males
+      - man
+      - men
+      - nephew
+      - nephews
+      - papa
+      - papas
+      - sir
+      - sirs
+      - son
+      - sons
+      - uncle
+      - uncles
+
+  - synonym: female
+    examples: |
+      - aunt
+      - auntie
+      - daughter
+      - female
+      - females
+      - gal
+      - gals
+      - gal
+      - girlfriend
+      - girlfriends
+      - girl
+      - girls
+      - grandma
+      - granddaughters
+      - grandmas
+      - her
+      - ladies
+      - lady
+      - mama
+      - mom
+      - moms
+      - mother
+      - mothers
+      - miss
+      - niece
+      - she
+      - sister
+      - sisters
+      - wife
+      - woman
+      - women
+
+  - synonym: hat
+    examples: |
+      - beanie
+      - beret
+      - cap
+      - caps
+      - fedora
+      - hat
+      - hats
+      - head covering
+      - headpiece
+      - headwear
+      - snapback
+      - trilby
+      - visor
+
+  - synonym: bag
+    examples: |
+      - backpack
+      - bag
+      - bags
+      - briefcase
+      - handbag
+      - knapsack
+      - purse
+      - rucksack
+      - shoulder bag
+
+  - synonym: score
+    examples: |
+      - grade
+      - rating
+      - result
+      - evaluation
+      - assessment
+      - performance
+      - ranking
+      - outcome
+      - points
+      - point
+      - standing
+      - total
+      - achievement
+
+  - synonym: 1st
+    examples: |
+      - winner
+      - won
+      - win
+      - top
+      - lead
+      - victor
+      - champion
+      - leader
+      - primary
+      - one
+      - first
+
+  - synonym: 2nd
+    examples: |
+      - second
+      - two
+      - 2st
+      - 2rd
+
+  - synonym: 3rd
+    examples: |
+      - third
+      - three
+      - 3st
+      - 3nd
+
+  - synonym: 4th
+    examples: |
+      - fourth
+      - four
+    
+  - synonym: 5th
+    examples: |
+      - fifth
+      - five
+
+  - synonym: 6th
+    examples: |
+      - sixth
+      - six
+
+  - synonym: 7th
+    examples: |
+      - seventh
+      - seven
+
+  - synonym: 8th
+    examples: |
+      - eighth
+      - eight
+
+  - synonym: 9th
+    examples: |
+      - ninth
+      - nine
+
+  - synonym: 10th
+    examples: |
+      - tenth
+      - ten
+
+  - synonym: 11th
+    examples: |
+      - eleventh
+      - eleven
+
+  - synonym: 12th
+    examples: |
+      - twelfth
+      - twelve
+
+  - synonym: 13th
+    examples: |
+      - thirteenth
+      - thirteen
+
+  - synonym: 14th
+    examples: |
+      - fourteenth
+      - fourteen
+      - last
+      - bottom ranked
+      - lowest placed
+      - final
+      - bottom
+
+  - synonym: 15th
+    examples: |
+      - fifteenth
+      - fifteen
+
+  - synonym: 16th
+    examples: |
+      - sixteenth
+      - sixteen
+
+  - synonym: 17th
+    examples: |
+      - seventeenth
+      - seventeen
+
+  - synonym: 18th
+    examples: |
+      - eighteenth
+      - eighteen
+
+  - synonym: alpha line
+    examples: |
+      - line 1
+      - line1
+      - line-one
+      - lineone
+      - line alpha
+      - linealpha
+      - alphaline
+      - a line
+
+  - synonym: beta line
+    examples: |
+      - line 2
+      - line2
+      - linetwo
+      - line-two
+      - line beta
+      - linebeta
+      - betaline
+      - b line
+
+  - synonym: gamma line
+    examples: |
+      - line 3
+      - line3
+      - linethree
+      - line-three
+      - line gamma
+      - linegamma
+      - gammaline
+      - g line
+
+  - synonym: delta line
+    examples: |
+      - line 4
+      - line4
+      - linefour
+      - line-four
+      - line delta
+      - linedelta
+      - deltaline
+      - d line
