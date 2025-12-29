@@ -13,6 +13,9 @@ A ROS (Robot Operating System) project featuring integration with the Pepper hum
 
 ## 🚀 Quick Start
 
+> [!IMPORTANT]
+> **Note on Detector Models**: Due to GitHub memory limitations, the deep learning models for detection are not included in this repository.
+
 ### Running with Pepper Robot
 
 If you have access to a physical Pepper robot:
